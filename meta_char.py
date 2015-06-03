@@ -77,6 +77,42 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.plainTextEditLHLP.textChanged.connect(self.onLHLPTextChanged)
         self.plainTextEditLHGoals.textChanged.connect(self.onLHGoalsTextChanged)
 
+        # body related actions
+        self.lineEditBodyLeaders.textChanged.connect(self.onBodyLeadersTextChanged)
+        self.lineEditBodySoldiers.textChanged.connect(self.onBodySoldiersTextChanged)
+        self.lineEditBodyGrunts.textChanged.connect(self.onBodyGruntsTextChanged)
+        self.plainTextEditBodyAssets.textChanged.connect(self.onBodyAssetsTextChanged)
+        self.plainTextEditBodyVehicles.textChanged.connect(self.onBodyVehiclesTextChanged)
+    # body related events
+    def onBodyLeadersTextChanged(self, text):
+        print 'onBodyLeadersTextChanged', text
+        self.meta_char.body.leaders = str(text)
+        print self.meta_char.body.leaders
+        pass
+    def onBodySoldiersTextChanged(self, text):
+        print 'onBodySoldiersTextChanged', text
+        self.meta_char.body.soldiers = str(text)
+        print self.meta_char.body.soldiers
+        pass
+    def onBodyGruntsTextChanged(self, text):
+        print 'onBodyGruntsTextChanged', text
+        self.meta_char.body.grunts = str(text)
+        print self.meta_char.body.grunts
+        pass
+    def onBodyAssetsTextChanged(self):
+        text = self.plainTextEditBodyAssets.toPlainText()
+        print 'onBodyAssetsTextChanged', text
+        self.meta_char.body.assets = str(text)
+        print self.meta_char.body.assets
+        pass
+    def onBodyVehiclesTextChanged(self):
+        text = self.plainTextEditBodyVehicles.toPlainText()
+        print 'onBodyVehiclesTextChanged', text
+        self.meta_char.body.vehicles= str(text)
+        print self.meta_char.body.vehicles
+        pass
+
+    #main
     def main(self):
         self.show()
     # meta_char base level attributes
