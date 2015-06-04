@@ -12,26 +12,35 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.meta_char = MetaChar()
         self.init_ui()
         self.init_menu()
-
     #main
     def main(self):
         self.show()
+
     def init_menu(self):
         exit_action = QtGui.QAction(QtGui.QIcon('exit.png'), '&Exit', self)
-        exit_action.setShortcut('Ctrl+Q')
+        exit_action.setShortcut('Ctrl+q')
         exit_action.setStatusTip('Exit Application')
         exit_action.triggered.connect(QtGui.qApp.quit)
 
         save_action = QtGui.QAction(QtGui.QIcon('save.png'), '&Save', self)
-        save_action.setShortcut('Ctrl+S')
+        save_action.setShortcut('Ctrl+s')
         save_action.setStatusTip('Save To Disk')
         save_action.triggered.connect(self.showSaveDialog)
 
         load_action = QtGui.QAction(QtGui.QIcon('load.png'), '&Load', self)
-        load_action.setShortcut('Ctrl+O')
+        load_action.setShortcut('Ctrl+o')
         load_action.setStatusTip('Load From Disk')
         load_action.triggered.connect(self.showOpenDialog)
 
+        export_html_action = QtGui.QAction(QtGui.QIcon('export.png'), 'E&xport HTML', self)
+        export_html_action.setShortcut('Ctrl+t')
+        export_html_action.setStatusTip('Export to HTML')
+        export_html_action.triggered.connect(self.export_to_html)
+
+        export_pdf_action = QtGui.QAction(QtGui.QIcon('export.png'), 'E&xport PDF', self)
+        export_pdf_action.setShortcut('Ctrl+p')
+        export_pdf_action.setStatusTip('Export to PDF')
+        export_pdf_action.triggered.connect(self.export_to_pdf)
         #test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
         #test_action.setShortcut('Ctrl+T')
         #test_action.setStatusTip('TestAction')
@@ -42,7 +51,31 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
         #file_menu.addAction(test_action)
+        file_menu.addAction(export_html_action)
+        file_menu.addAction(export_pdf_action)
         file_menu.addAction(exit_action)
+
+    def export_to_html(self):
+        filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to HTML', "*.html")
+        if filename:
+            html = "<h1>Hi there</h1><p>hi2<br/></p>hi3"
+            output = open(filename, 'w')
+            output.write(html)
+            output.close()
+            print file(filename).read()
+
+    def export_to_pdf(self):
+        filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to PDF', "*.pdf")
+        if filename:
+            html = "<h1>Hi there</h1><p>hi2<br/></p>hi3"
+            from fpdf import (FPDF, HTMLMixin)
+            class MyFPDF(FPDF,HTMLMixin):
+                pass
+            pdf=MyFPDF()
+            pdf.add_page()
+            pdf.write_html(html)
+            pdf.output(filename, 'F')
+
     def showTestDialog(self):
         print "From Test Action:", self.meta_char.name, self.meta_char.history, "brain: ", self.meta_char.brain.intelligence
 
@@ -57,8 +90,6 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
             self.update_all_brain_derived_fields()
             self.update_all_right_hand_derived_fields()
             self.update_all_left_hand_derived_fields()
-
-
 
     def showSaveDialog(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Save File', "*")
