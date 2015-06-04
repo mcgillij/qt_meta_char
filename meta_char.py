@@ -52,7 +52,12 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         if filename:
             meta_char = self.meta_char.load_from_disk(filename)
             self.meta_char = meta_char
+            self.update_all_mc_fields()
+            self.update_body_fields()
             self.update_all_brain_derived_fields()
+            self.update_all_right_hand_derived_fields()
+            self.update_all_left_hand_derived_fields()
+
 
 
     def showSaveDialog(self):
@@ -66,6 +71,7 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.lineEditName.textChanged.connect(self.onMCNameTextChanged)
         self.plainTextEditHistory.textChanged.connect(self.onMCHistoryTextChanged)
         # brain related actions
+        self.lineEditBrainName.textChanged.connect(self.onBrainNameTextChanged)
         self.lineEditBrainInt.textChanged.connect(self.onBrainIntTextChanged)
         self.lineEditBrainRef.textChanged.connect(self.onBrainRefTextChanged)
         self.lineEditBrainTech.textChanged.connect(self.onBrainTechTextChanged)
@@ -88,6 +94,7 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.plainTextEditBrainGoals.textChanged.connect(self.onBrainGoalsTextChanged)
 
         # right hand related actions
+        self.lineEditRHName.textChanged.connect(self.onRHNameTextChanged)
         self.lineEditRHInt.textChanged.connect(self.onRHIntTextChanged)
         self.lineEditRHRef.textChanged.connect(self.onRHRefTextChanged)
         self.lineEditRHTech.textChanged.connect(self.onRHTechTextChanged)
@@ -109,6 +116,7 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.plainTextEditRHLP.textChanged.connect(self.onRHLPTextChanged)
         self.plainTextEditRHGoals.textChanged.connect(self.onRHGoalsTextChanged)
         # left hand related actions
+        self.lineEditLHName.textChanged.connect(self.onLHNameTextChanged)
         self.lineEditLHInt.textChanged.connect(self.onLHIntTextChanged)
         self.lineEditLHRef.textChanged.connect(self.onLHRefTextChanged)
         self.lineEditLHTech.textChanged.connect(self.onLHTechTextChanged)
@@ -136,6 +144,13 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.lineEditBodyGrunts.textChanged.connect(self.onBodyGruntsTextChanged)
         self.plainTextEditBodyAssets.textChanged.connect(self.onBodyAssetsTextChanged)
         self.plainTextEditBodyVehicles.textChanged.connect(self.onBodyVehiclesTextChanged)
+
+    def update_body_fields(self):
+        self.lineEditBodyLeaders.setText(str(self.meta_char.body.leaders))
+        self.lineEditBodySoldiers.setText(str(self.meta_char.body.soldiers))
+        self.lineEditBodyGrunts.setText(str(self.meta_char.body.grunts))
+        self.plainTextEditBodyAssets.setPlainText(str(self.meta_char.body.assets))
+        self.plainTextEditBodyVehicles.setPlainText(str(self.meta_char.body.vehicles))
     # body related events
     def onBodyLeadersTextChanged(self, text):
         print 'onBodyLeadersTextChanged', text
@@ -295,17 +310,38 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.update_all_brain_derived_fields()
         pass
 
+    def onBrainNameTextChanged(self, text):
+        print 'onBrainNameTextChanged', text
+        self.meta_char.brain.name= str(text)
+        pass
+
+    def update_all_mc_fields(self):
+        self.lineEditName.setText(str(self.meta_char.name))
+        self.plainTextEditHistory.setPlainText(str(self.meta_char.history))
+
     def update_all_brain_derived_fields(self):
-        # key skills 
+        # key skills
+        self.lineEditBrainName.setText(str(self.meta_char.brain.name))
+        self.lineEditBrainInt.setText(str(self.meta_char.brain.intelligence))
+        self.lineEditBrainRef.setText(str(self.meta_char.brain.reflex))
+        self.lineEditBrainTech.setText(str(self.meta_char.brain.technology))
+        self.lineEditBrainDex.setText(str(self.meta_char.brain.dexterity))
+        self.lineEditBrainCool.setText(str(self.meta_char.brain.cool))
+        self.lineEditBrainWill.setText(str(self.meta_char.brain.will))
+        self.lineEditBrainStr.setText(str(self.meta_char.brain.strength))
+        self.lineEditBrainCon.setText(str(self.meta_char.brain.constitution))
+        self.lineEditBrainMove.setText(str(self.meta_char.brain.move))
+        self.lineEditBrainBody.setText(str(self.meta_char.brain.body))
         self.lineEditBrainKSOne.setText(str(self.meta_char.brain.key_skill_1))
         self.lineEditBrainKSOneLVL.setText(str(self.meta_char.brain.key_skill_1_lvl))
-        self.lineEditBrainKSTwo.setText(str(self.meta_char.brain.key_skill_2_lvl))
+        self.lineEditBrainKSTwo.setText(str(self.meta_char.brain.key_skill_2))
         self.lineEditBrainKSTwoLVL.setText(str(self.meta_char.brain.key_skill_2_lvl))
         self.lineEditBrainKPOne.setText(str(self.meta_char.brain.key_perk_1))
         self.lineEditBrainKPOneLVL.setText(str(self.meta_char.brain.key_perk_1_lvl))
-        self.lineEditBrainKPTwo.setText(str(self.meta_char.brain.key_perk_2_lvl))
+        self.lineEditBrainKPTwo.setText(str(self.meta_char.brain.key_perk_2))
         self.lineEditBrainKPTwoLVL.setText(str(self.meta_char.brain.key_perk_2_lvl))
-
+        self.plainTextEditBrainLP.setPlainText(str(self.meta_char.brain.lifepath))
+        self.plainTextEditBrainGoals.setPlainText(str(self.meta_char.brain.goals))
         #luck
         self.meta_char.brain.luck = self.meta_char.brain.intelligence + self.meta_char.brain.reflex / 2
         self.lineROBrainLuck.setText(str(self.meta_char.brain.luck))
@@ -465,7 +501,34 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.update_all_right_hand_derived_fields()
         pass
 
+    def onRHNameTextChanged(self, text):
+        print 'onRHNameTextChanged', text
+        self.meta_char.right_hand.name= str(text)
+        pass
+
     def update_all_right_hand_derived_fields(self):
+        # key skills
+        self.lineEditRHName.setText(str(self.meta_char.right_hand.name))
+        self.lineEditRHInt.setText(str(self.meta_char.right_hand.intelligence))
+        self.lineEditRHRef.setText(str(self.meta_char.right_hand.reflex))
+        self.lineEditRHTech.setText(str(self.meta_char.right_hand.technology))
+        self.lineEditRHDex.setText(str(self.meta_char.right_hand.dexterity))
+        self.lineEditRHCool.setText(str(self.meta_char.right_hand.cool))
+        self.lineEditRHWill.setText(str(self.meta_char.right_hand.will))
+        self.lineEditRHStr.setText(str(self.meta_char.right_hand.strength))
+        self.lineEditRHCon.setText(str(self.meta_char.right_hand.constitution))
+        self.lineEditRHMove.setText(str(self.meta_char.right_hand.move))
+        self.lineEditRHBody.setText(str(self.meta_char.right_hand.body))
+        self.lineEditRHKSOne.setText(str(self.meta_char.right_hand.key_skill_1))
+        self.lineEditRHKSOneLVL.setText(str(self.meta_char.right_hand.key_skill_1_lvl))
+        self.lineEditRHKSTwo.setText(str(self.meta_char.right_hand.key_skill_2))
+        self.lineEditRHKSTwoLVL.setText(str(self.meta_char.right_hand.key_skill_2_lvl))
+        self.lineEditRHKPOne.setText(str(self.meta_char.right_hand.key_perk_1))
+        self.lineEditRHKPOneLVL.setText(str(self.meta_char.right_hand.key_perk_1_lvl))
+        self.lineEditRHKPTwo.setText(str(self.meta_char.right_hand.key_perk_2))
+        self.lineEditRHKPTwoLVL.setText(str(self.meta_char.right_hand.key_perk_2_lvl))
+        self.plainTextEditRHLP.setPlainText(str(self.meta_char.right_hand.lifepath))
+        self.plainTextEditRHGoals.setPlainText(str(self.meta_char.right_hand.goals))
         #luck
         self.meta_char.right_hand.luck = self.meta_char.right_hand.intelligence + self.meta_char.right_hand.reflex / 2
         self.lineRORHLuck.setText(str(self.meta_char.right_hand.luck))
@@ -626,7 +689,34 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.update_all_left_hand_derived_fields()
         pass
 
+    def onLHNameTextChanged(self, text):
+        print 'onLNNameTextChanged', text
+        self.meta_char.left_hand.name= str(text)
+        pass
+
     def update_all_left_hand_derived_fields(self):
+        # key skills
+        self.lineEditLHName.setText(str(self.meta_char.left_hand.name))
+        self.lineEditLHInt.setText(str(self.meta_char.left_hand.intelligence))
+        self.lineEditLHRef.setText(str(self.meta_char.left_hand.reflex))
+        self.lineEditLHTech.setText(str(self.meta_char.left_hand.technology))
+        self.lineEditLHDex.setText(str(self.meta_char.left_hand.dexterity))
+        self.lineEditLHCool.setText(str(self.meta_char.left_hand.cool))
+        self.lineEditLHWill.setText(str(self.meta_char.left_hand.will))
+        self.lineEditLHStr.setText(str(self.meta_char.left_hand.strength))
+        self.lineEditLHCon.setText(str(self.meta_char.left_hand.constitution))
+        self.lineEditLHMove.setText(str(self.meta_char.left_hand.move))
+        self.lineEditLHBody.setText(str(self.meta_char.left_hand.body))
+        self.lineEditLHKSOne.setText(str(self.meta_char.left_hand.key_skill_1))
+        self.lineEditLHKSOneLVL.setText(str(self.meta_char.left_hand.key_skill_1_lvl))
+        self.lineEditLHKSTwo.setText(str(self.meta_char.left_hand.key_skill_2_lvl))
+        self.lineEditLHKSTwoLVL.setText(str(self.meta_char.left_hand.key_skill_2_lvl))
+        self.lineEditLHKPOne.setText(str(self.meta_char.left_hand.key_perk_1))
+        self.lineEditLHKPOneLVL.setText(str(self.meta_char.left_hand.key_perk_1_lvl))
+        self.lineEditLHKPTwo.setText(str(self.meta_char.left_hand.key_perk_2_lvl))
+        self.lineEditLHKPTwoLVL.setText(str(self.meta_char.left_hand.key_perk_2_lvl))
+        self.plainTextEditLHLP.setPlainText(str(self.meta_char.left_hand.lifepath))
+        self.plainTextEditLHGoals.setPlainText(str(self.meta_char.left_hand.goals))
         #luck
         self.meta_char.left_hand.luck = self.meta_char.left_hand.intelligence + self.meta_char.left_hand.reflex / 2
         self.lineROLHLuck.setText(str(self.meta_char.left_hand.luck))

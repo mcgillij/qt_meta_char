@@ -134,7 +134,7 @@ class LeftHand:
 
 class Body:
     def __init__(self):
-        self.troops = ""
+        self.leaders = ""
         self.soldiers = ""
         self.grunts = ""
         self.assets = ""
