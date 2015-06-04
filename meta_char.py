@@ -32,16 +32,16 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         load_action.setStatusTip('Load From Disk')
         load_action.triggered.connect(self.showOpenDialog)
 
-        test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
-        test_action.setShortcut('Ctrl+T')
-        test_action.setStatusTip('TestAction')
-        test_action.triggered.connect(self.showTestDialog)
+        #test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
+        #test_action.setShortcut('Ctrl+T')
+        #test_action.setStatusTip('TestAction')
+        #test_action.triggered.connect(self.showTestDialog)
         menubar = self.menuBar()
 
         file_menu = menubar.addMenu('&File')
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
-        file_menu.addAction(test_action)
+        #file_menu.addAction(test_action)
         file_menu.addAction(exit_action)
     def showTestDialog(self):
         print "From Test Action:", self.meta_char.name, self.meta_char.history, "brain: ", self.meta_char.brain.intelligence
