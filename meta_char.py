@@ -10,6 +10,59 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         super(MainApp, self).__init__(parent)
         self.setupUi(self)
         self.meta_char = MetaChar()
+        self.init_ui()
+        self.init_menu()
+
+    #main
+    def main(self):
+        self.show()
+    def init_menu(self):
+        exit_action = QtGui.QAction(QtGui.QIcon('exit.png'), '&Exit', self)
+        exit_action.setShortcut('Ctrl+Q')
+        exit_action.setStatusTip('Exit Application')
+        exit_action.triggered.connect(QtGui.qApp.quit)
+
+        save_action = QtGui.QAction(QtGui.QIcon('save.png'), '&Save', self)
+        save_action.setShortcut('Ctrl+S')
+        save_action.setStatusTip('Save To Disk')
+        save_action.triggered.connect(self.showSaveDialog)
+
+        load_action = QtGui.QAction(QtGui.QIcon('load.png'), '&Load', self)
+        load_action.setShortcut('Ctrl+O')
+        load_action.setStatusTip('Load From Disk')
+        load_action.triggered.connect(self.showOpenDialog)
+
+        test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
+        test_action.setShortcut('Ctrl+T')
+        test_action.setStatusTip('TestAction')
+        test_action.triggered.connect(self.showTestDialog)
+        menubar = self.menuBar()
+
+        file_menu = menubar.addMenu('&File')
+        file_menu.addAction(load_action)
+        file_menu.addAction(save_action)
+        file_menu.addAction(test_action)
+        file_menu.addAction(exit_action)
+    def showTestDialog(self):
+        print "From Test Action:", self.meta_char.name, self.meta_char.history, "brain: ", self.meta_char.brain.intelligence
+
+    def showOpenDialog(self):
+        filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '/home')
+        print "opening", filename, "\n"
+        if filename:
+            meta_char = self.meta_char.load_from_disk(filename)
+            self.meta_char = meta_char
+            self.update_all_brain_derived_fields()
+
+
+    def showSaveDialog(self):
+        filename = QtGui.QFileDialog.getSaveFileName(self, 'Save File', "*")
+        print "saving", filename, "\n"
+        if filename:
+            self.meta_char.save_to_disk(filename)
+
+    # hooks up all the textfields / areas
+    def init_ui(self):
         self.lineEditName.textChanged.connect(self.onMCNameTextChanged)
         self.plainTextEditHistory.textChanged.connect(self.onMCHistoryTextChanged)
         # brain related actions
@@ -112,9 +165,6 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         print self.meta_char.body.vehicles
         pass
 
-    #main
-    def main(self):
-        self.show()
     # meta_char base level attributes
     def onMCNameTextChanged(self, text):
         print 'onMCNameTextChanged', text
@@ -246,6 +296,16 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         pass
 
     def update_all_brain_derived_fields(self):
+        # key skills 
+        self.lineEditBrainKSOne.setText(str(self.meta_char.brain.key_skill_1))
+        self.lineEditBrainKSOneLVL.setText(str(self.meta_char.brain.key_skill_1_lvl))
+        self.lineEditBrainKSTwo.setText(str(self.meta_char.brain.key_skill_2_lvl))
+        self.lineEditBrainKSTwoLVL.setText(str(self.meta_char.brain.key_skill_2_lvl))
+        self.lineEditBrainKPOne.setText(str(self.meta_char.brain.key_perk_1))
+        self.lineEditBrainKPOneLVL.setText(str(self.meta_char.brain.key_perk_1_lvl))
+        self.lineEditBrainKPTwo.setText(str(self.meta_char.brain.key_perk_2_lvl))
+        self.lineEditBrainKPTwoLVL.setText(str(self.meta_char.brain.key_perk_2_lvl))
+
         #luck
         self.meta_char.brain.luck = self.meta_char.brain.intelligence + self.meta_char.brain.reflex / 2
         self.lineROBrainLuck.setText(str(self.meta_char.brain.luck))

@@ -1,4 +1,4 @@
-
+import os, glob, pickle
 
 class MetaChar:
     def __init__(self):
@@ -8,7 +8,18 @@ class MetaChar:
         self.right_hand = RightHand()
         self.left_hand = LeftHand()
         self.body = Body()
+    def save_to_disk(self, filename):
+        print "Attempting to save to disk with pickle"
+        save_file = file(filename, "wb")
+        pickle.dump(self, save_file, 2)
+        save_file.close()
 
+    def load_from_disk(self, filename):
+        print "Attempting to load from disk with pickle"
+        load_file = file(filename, "rb")
+        meta_char = pickle.load(load_file)
+        load_file.close()
+        return meta_char
 
 class Brain:
     def __init__(self):
