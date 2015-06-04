@@ -58,9 +58,13 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
     def export_to_html(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to HTML', "*.html")
         if filename:
-            html = "<h1>Hi there</h1><p>hi2<br/></p>hi3"
+            html = '<h1>${name}Hi there</h1><p>${pants}hi2<br/></p>hi3'
+            from string import Template
+            s = Template(html)
+            d = dict(name='JASON', pants='army')
+            s = s.substitute(d)
             output = open(filename, 'w')
-            output.write(html)
+            output.write(str(s))
             output.close()
             print file(filename).read()
 
