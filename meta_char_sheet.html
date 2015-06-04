@@ -8,14 +8,19 @@
   </head>
   <body>
 	<div id="headynugs">
-		<h1>Cyberpunk Meta Character Sheet</h1>
+    <h1>Cyberpunk Meta Character Sheet</h1>
 	</div>
 	<div id="content">
+    <div id="name">
+      ${name}
+    </div>
 		<div id="history">
 			<p>Meta Character History</p>
+      <p>${history}</p>
 		</div>
 		<div id="brain">
-			<table>
+      <p>Name: ${b_name}</p>
+			<table width="100%">
 				<tr>
 					<th>Stats</th>
 					<th>INT</th>
@@ -31,16 +36,16 @@
 				</tr>
 				<tr>
 					<th>Stat Value</th>
-					<td>${int}</td>
-					<td>${ref}</td>
-					<td>${tech}</td>
-					<td>${dex}</td>
-					<td>${cool}</td>
-					<td>${will}</td>
-					<td>${str}</td>
-					<td>${con}</td>
-					<td>${move}</td>
-					<td>${body}</td>
+					<td>${b_int}</td>
+					<td>${b_ref}</td>
+					<td>${b_tech}</td>
+					<td>${b_dex}</td>
+					<td>${b_cool}</td>
+					<td>${b_will}</td>
+					<td>${b_str}</td>
+					<td>${b_con}</td>
+					<td>${b_move}</td>
+					<td>${b_body}</td>
 				</tr>
 
 				<tr>
@@ -58,16 +63,16 @@
 				</tr>
 				<tr>
 					<th>Stat Value</th>
-					<td>${luck}</td>
-					<td>${hum}</td>
-					<td>${rec}</td>
-					<td>${end}</td>
-					<td>${run}</td>
-					<td>${spr}</td>
-					<td>${swim}</td>
-					<td>${leap}</td>
-					<td>${hits}</td>
-					<td>${stun}</td>
+					<td>${b_luck}</td>
+					<td>${b_hum}</td>
+					<td>${b_rec}</td>
+					<td>${b_end}</td>
+					<td>${b_run}</td>
+					<td>${b_spr}</td>
+					<td>${b_swim}</td>
+					<td>${b_leap}</td>
+					<td>${b_hits}</td>
+					<td>${b_stun}</td>
 				</tr>
 			</table>
 			<table>
@@ -78,24 +83,24 @@
 					<th>LVL</th>
 				</tr>
 				<tr>
-					<td>${keyskillA}</td>
-					<td>${keyskillAlvl}</td>
-					<td>${keyperkA}</td>
-					<td>${keyperkAlvl}</td>
+					<td>${b_ks1}</td>
+					<td>${b_ks1_lvl}</td>
+					<td>${b_kp1}</td>
+					<td>${b_kp1_lvl}</td>
 				</tr>
 				<tr>
-					<td>${keyskillB}</td>
-					<td>${keyskillBlvl}</td>
-					<td>${keyperkB}</td>
-					<td>${keyperkBlvl}</td>
+					<td>${b_ks2}</td>
+					<td>${b_ks2_lvl}</td>
+					<td>${b_kp2}</td>
+					<td>${b_kp2_lvl}</td>
 				</tr>
 				<tr>
 					<th>LIFEPATH</th>
-					<td>${lifepath}</td>
+					<td>${b_lp}</td>
 				</tr>
 				<tr>
 					<th>GOALS</th>
-					<td>${goals}</td>
+					<td>${b_goals}</td>
 				</tr>
 			</table>
 		</div>

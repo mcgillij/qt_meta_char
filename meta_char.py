@@ -4,6 +4,7 @@ import sys
 from pprint import pprint
 import meta_char_window
 from classes import MetaChar, Brain, RightHand, LeftHand
+from xhtml2pdf import pisa
 
 class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
     def __init__(self, parent=None):
@@ -58,11 +59,14 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
     def export_to_html(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to HTML', "*.html")
         if filename:
-            html = '<h1>${name}Hi there</h1><p>${pants}hi2<br/></p>hi3'
+            html = open('meta_char_sheet.html', 'r')
+            html_str = html.read()
+            html.close()
+            #html = '<h1>${name}Hi there</h1><p>${pants}hi2<br/></p>hi3'
             from string import Template
-            s = Template(html)
+            s = Template(html_str)
             d = dict(name='JASON', pants='army')
-            s = s.substitute(d)
+            s = s.safe_substitute(d)
             output = open(filename, 'w')
             output.write(str(s))
             output.close()
@@ -71,14 +75,128 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
     def export_to_pdf(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to PDF', "*.pdf")
         if filename:
-            html = "<h1>Hi there</h1><p>hi2<br/></p>hi3"
-            from fpdf import (FPDF, HTMLMixin)
-            class MyFPDF(FPDF,HTMLMixin):
-                pass
-            pdf=MyFPDF()
-            pdf.add_page()
-            pdf.write_html(html)
-            pdf.output(filename, 'F')
+            html = open('meta_char_sheet.html', 'r')
+            html_str = html.read()
+            html.close()
+            from string import Template
+            s = Template(html_str)
+            d = self.create_dict()
+            s = s.safe_substitute(d)
+            convert_html_to_pdf(s, filename)
+
+    def create_dict(self):
+        #shortcuts
+        b = self.meta_char.brain
+        l = self.meta_char.left_hand
+        r = self.meta_char.right_hand
+        bd = self.meta_char.body
+        my_dict = dict(
+                name=self.meta_char.name,
+                history=self.meta_char.history,
+                b_name=b.name,
+                b_int=b.intelligence,
+                b_ref=b.reflex,
+                b_tech=b.technology,
+                b_dex=b.dexterity,
+                b_cool=b.cool,
+                b_will=b.will,
+                b_str=b.strength,
+                b_con=b.constitution,
+                b_move=b.move,
+                b_body=b.body,
+                b_luck=b.luck,
+                b_hum=b.humanity,
+                b_rec=b.recovery,
+                b_end=b.endurance,
+                b_run=b.run,
+                b_spr=b.sprint,
+                b_swim=b.swim,
+                b_leap=b.leap,
+                b_hits=b.hits,
+                b_stun=b.stun,
+                b_ks1=b.key_skill_1,
+                b_ks1_lvl=b.key_skill_1_lvl,
+                b_ks2=b.key_skill_2,
+                b_ks2_lvl=b.key_skill_2_lvl,
+                b_kp1=b.key_perk_1,
+                b_kp1_lvl=b.key_perk_1_lvl,
+                b_kp2=b.key_perk_2,
+                b_kp2_lvl=b.key_perk_2_lvl,
+                b_lp=b.lifepath,
+                b_goals=b.goals,
+
+                l_name=l.name,
+                l_int=l.intelligence,
+                l_ref=l.reflex,
+                l_tech=l.technology,
+                l_dex=l.dexterity,
+                l_cool=l.cool,
+                l_will=l.will,
+                l_str=l.strength,
+                l_con=l.constitution,
+                l_move=l.move,
+                l_body=l.body,
+                l_luck=l.luck,
+                l_hum=l.humanity,
+                l_rec=l.recovery,
+                l_end=l.endurance,
+                l_run=l.run,
+                l_spr=l.sprint,
+                l_swim=l.swim,
+                l_leap=l.leap,
+                l_hits=l.hits,
+                l_stun=l.stun,
+                l_ks1=l.key_skill_1,
+                l_ks1_lvl=l.key_skill_1_lvl,
+                l_ks2=l.key_skill_2,
+                l_ks2_lvl=l.key_skill_2_lvl,
+                l_kp1=l.key_perk_1,
+                l_kp1_lvl=l.key_perk_1_lvl,
+                l_kp2=l.key_perk_2,
+                l_kp2_lvl=l.key_perk_2_lvl,
+                l_lp=l.lifepath,
+                l_goals=l.goals,
+
+                r_name=r.name,
+                r_int=r.intelligence,
+                r_ref=r.reflex,
+                r_tech=r.technology,
+                r_dex=r.dexterity,
+                r_cool=r.cool,
+                r_will=r.will,
+                r_str=r.strength,
+                r_con=r.constitution,
+                r_move=r.move,
+                r_body=r.body,
+                r_luck=r.luck,
+                r_hum=r.humanity,
+                r_rec=r.recovery,
+                r_end=r.endurance,
+                r_run=r.run,
+                r_spr=r.sprint,
+                r_swim=r.swim,
+                r_leap=r.leap,
+                r_hits=r.hits,
+                r_stun=r.stun,
+                r_ks1=r.key_skill_1,
+                r_ks1_lvl=r.key_skill_1_lvl,
+                r_ks2=r.key_skill_2,
+                r_ks2_lvl=r.key_skill_2_lvl,
+                r_kp1=r.key_perk_1,
+                r_kp1_lvl=r.key_perk_1_lvl,
+                r_kp2=r.key_perk_2,
+                r_kp2_lvl=r.key_perk_2_lvl,
+                r_lp=r.lifepath,
+                r_goals=r.goals,
+
+                bd_leaders=bd.leaders,
+                bd_soldiers=bd.soldiers,
+                bd_grunts=bd.grunts,
+                bd_assets=bd.assets,
+                bd_vehicles=bd.vehicles
+
+                )
+        return my_dict
 
     def showTestDialog(self):
         print "From Test Action:", self.meta_char.name, self.meta_char.history, "brain: ", self.meta_char.brain.intelligence
@@ -793,6 +911,14 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.lineROLHStun.setText(str(self.meta_char.left_hand.stun))
         print str(self.meta_char.left_hand.stun)
         pass
+
+
+def convert_html_to_pdf(source, output):
+    output_file = open(output, "w+b")
+    pisa_status = pisa.CreatePDF(source, output_file)
+    output_file.close()
+    return pisa_status
+
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
     MA = MainApp()
