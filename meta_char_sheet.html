@@ -3,112 +3,352 @@
     <head>
     	<meta charset="UTF-8">
     	<title>Meta Character Sheet</title>
-        <link rel='stylesheet' type='text/css' href='styles/stylesheet.css'/>
-        <script type='text/javascript' src='scripts/script.js'></script>
+        <style>
+			body {
+				font-family: monospace;
+			}
+			table, th, td {
+
+			   border-collapse: collapse;
+			   -pdf-keep-with-next: true;
+			   padding-top: 2px
+
+			} 
+
+			#brain, #leftHand, #rightHand, #body {
+				margin-bottom:10px;
+				border: 1px solid black;
+				text-align: center;
+				
+				-pdf-keep-with-next: true;
+			}
+
+			@page {
+	 	      size: letter portrait;
+	    		}
+
+        </style>
   </head>
   <body>
+
 	<div id="headynugs">
     <h1>Cyberpunk Meta Character Sheet</h1>
+    <p><h3>Name:</h3> ${b_name}</p>
+
 	</div>
 	<div id="content">
-    <div id="name">
-      ${name}
-    </div>
-		<div id="history">
-			<p>Meta Character History</p>
-      <p>${history}</p>
-		</div>
-		<div id="brain">
-      <p>Name: ${b_name}</p>
-			<table width="100%">
-				<tr>
-					<th>Stats</th>
-					<th>INT</th>
-					<th>REF</th>
-					<th>TECH</th>
-					<th>DEX</th>
-					<th>COOL</th>
-					<th>WILL</th>
-					<th>STR</th>
-					<th>CON</th>
-					<th>MOVE</th>
-					<th>BODY</th>
-				</tr>
-				<tr>
-					<th>Stat Value</th>
-					<td>${b_int}</td>
-					<td>${b_ref}</td>
-					<td>${b_tech}</td>
-					<td>${b_dex}</td>
-					<td>${b_cool}</td>
-					<td>${b_will}</td>
-					<td>${b_str}</td>
-					<td>${b_con}</td>
-					<td>${b_move}</td>
-					<td>${b_body}</td>
-				</tr>
+		<div id="leftCol">
+    		<div id="name">
+       			
+    		</div>
 
-				<tr>
-					<th>Derived Stats</th>
-					<th>LUCK</th>
-					<th>HUM</th>
-					<th>REC</th>
-					<th>END</th>
-					<th>RUN</th>
-					<th>SPR</th>
-					<th>SWIM</th>
-					<th>LEAP</th>
-					<th>HITS</th>
-					<th>STUN</th>
-				</tr>
-				<tr>
-					<th>Stat Value</th>
-					<td>${b_luck}</td>
-					<td>${b_hum}</td>
-					<td>${b_rec}</td>
-					<td>${b_end}</td>
-					<td>${b_run}</td>
-					<td>${b_spr}</td>
-					<td>${b_swim}</td>
-					<td>${b_leap}</td>
-					<td>${b_hits}</td>
-					<td>${b_stun}</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<th>KEYSKILLS</th>
-					<th>LVL</th>
-					<th>KEYPERKS/TALENTS</th>
-					<th>LVL</th>
-				</tr>
-				<tr>
-					<td>${b_ks1}</td>
-					<td>${b_ks1_lvl}</td>
-					<td>${b_kp1}</td>
-					<td>${b_kp1_lvl}</td>
-				</tr>
-				<tr>
-					<td>${b_ks2}</td>
-					<td>${b_ks2_lvl}</td>
-					<td>${b_kp2}</td>
-					<td>${b_kp2_lvl}</td>
-				</tr>
-				<tr>
-					<th>LIFEPATH</th>
-					<td>${b_lp}</td>
-				</tr>
-				<tr>
-					<th>GOALS</th>
-					<td>${b_goals}</td>
-				</tr>
-			</table>
+			<div id="history">
+				<h3><p>Meta Character History</p></h3>
+      			<p>${history}</p>
+
+			</div>
+
+			<div id="body">
+
+			</div>
+
 		</div>
-		<div id="rightHand">
-		</div>
-		<div id="leftHand">
-		</div>
-		<div id="body">
+		<div id="rightCol">
+			<div id="brain" >
+      	
+				<table width="100%" >
+					<tr>
+						<th>Brain</th>
+					</tr>
+					<tr>
+						<th>Stats</th>
+						<th>INT</th>
+						<th>REF</th>
+						<th>TECH</th>
+						<th>DEX</th>
+						<th>COOL</th>
+						<th>WILL</th>
+						<th>STR</th>
+						<th>CON</th>
+						<th>MOVE</th>
+						<th>BODY</th>
+					</tr>
+					<tr>
+						<th>Stat Value</th>
+						<td>${b_int}</td>
+						<td>${b_ref}</td>
+						<td>${b_tech}</td>
+						<td>${b_dex}</td>
+						<td>${b_cool}</td>
+						<td>${b_will}</td>
+						<td>${b_str}</td>
+						<td>${b_con}</td>
+						<td>${b_move}</td>
+						<td>${b_body}</td>
+					</tr>
+
+					<tr>
+						<th>Derived Stats</th>
+						<th>LUCK</th>
+						<th>HUM</th>
+						<th>REC</th>
+						<th>END</th>
+						<th>RUN</th>
+						<th>SPR</th>
+						<th>SWIM</th>
+						<th>LEAP</th>
+						<th>HITS</th>
+						<th>STUN</th>
+					</tr>
+					<tr>
+						<th>Stat Value</th>
+						<td>${b_luck}</td>
+						<td>${b_hum}</td>
+						<td>${b_rec}</td>
+						<td>${b_end}</td>
+						<td>${b_run}</td>
+						<td>${b_spr}</td>
+						<td>${b_swim}</td>
+						<td>${b_leap}</td>
+						<td>${b_hits}</td>
+						<td>${b_stun}</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th>KEYSKILLS</th>
+						<th>LVL</th>
+						<th>KEYPERKS/TALENTS</th>
+						<th>LVL</th>
+					</tr>
+					<tr>
+						<td>${b_ks1}</td>
+						<td>${b_ks1_lvl}</td>
+						<td>${b_kp1}</td>
+						<td>${b_kp1_lvl}</td>
+					</tr>
+					<tr>
+						<td>${b_ks2}</td>
+						<td>${b_ks2_lvl}</td>
+						<td>${b_kp2}</td>s
+						<td>${b_kp2_lvl}</td>
+					</tr>
+					<tr>
+						<th>LIFEPATH</th>
+						<td colspan="3">${b_lp}</td>
+					</tr>
+					<tr>
+						<th>GOALS</th>
+						<td colspan="3">${b_goals}</td>
+					</tr>
+				</table>
+			</div>
+<br>
+			<div id="rightHand">
+				<table width="100%">
+					<tr>
+						<th>Right Hand</th>
+					</tr>
+					<tr>
+						<th>Stats</th>
+						<th>INT</th>
+						<th>REF</th>
+						<th>TECH</th>
+						<th>DEX</th>
+						<th>COOL</th>
+						<th>WILL</th>
+						<th>STR</th>
+						<th>CON</th>
+						<th>MOVE</th>
+						<th>BODY</th>
+					</tr>
+					<tr>
+						<th>Stat Value</th>
+						<td>${r_int}</td>
+						<td>${r_ref}</td>
+						<td>${r_tech}</td>
+						<td>${r_dex}</td>
+						<td>${r_cool}</td>
+						<td>${r_will}</td>
+						<td>${r_str}</td>
+						<td>${r_con}</td>
+						<td>${r_move}</td>
+						<td>${r_body}</td>
+					</tr>
+
+					<tr>
+						<th>Derived Stats</th>
+						<th>LUCK</th>
+						<th>HUM</th>
+						<th>REC</th>
+						<th>END</th>
+						<th>RUN</th>
+						<th>SPR</th>
+						<th>SWIM</th>
+						<th>LEAP</th>
+						<th>HITS</th>
+						<th>STUN</th>
+					</tr>
+					<tr>
+						<th>Stat Value</th>
+						<td>${r_luck}</td>
+						<td>${r_hum}</td>
+						<td>${r_rec}</td>
+						<td>${r_end}</td>
+						<td>${r_run}</td>
+						<td>${r_spr}</td>
+						<td>${r_swim}</td>
+						<td>${r_leap}</td>
+						<td>${r_hits}</td>
+						<td>${r_stun}</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th>KEYSKILLS</th>
+						<th>LVL</th>
+						<th>KEYPERKS/TALENTS</th>
+						<th>LVL</th>
+					</tr>
+					<tr>
+						<td>${r_ks1}</td>
+						<td>${r_ks1_lvl}</td>
+						<td>${r_kp1}</td>
+						<td>${r_kp1_lvl}</td>
+					</tr>
+					<tr>
+						<td>${r_ks2}</td>
+						<td>${r_ks2_lvl}</td>
+						<td>${r_kp2}</td>
+						<td>${r_kp2_lvl}</td>
+					</tr>
+					<tr>
+						<th>LIFEPATH</th>
+						<td colspan="3">${r_lp}</td>
+					</tr>
+					<tr>
+						<th>GOALS</th>
+						<td colspan="3">$r_goals}</td>
+					</tr>
+				</table>
+			</div>
+<br>
+			<div id="leftHand">
+				<table width="100%">
+					<tr>
+						<th>Left Hand</th>
+					</tr>
+					<tr>
+						<th>Stats</th>
+						<th>INT</th>
+						<th>REF</th>
+						<th>TECH</th>
+						<th>DEX</th>
+						<th>COOL</th>
+						<th>WILL</th>
+						<th>STR</th>
+						<th>CON</th>
+						<th>MOVE</th>
+						<th>BODY</th>
+					</tr>
+					<tr>
+						<th>Stat Value</th>
+						<td>${l_int}</td>
+						<td>${l_ref}</td>
+						<td>${l_tech}</td>
+						<td>${l_dex}</td>
+						<td>${l_cool}</td>
+						<td>${l_will}</td>
+						<td>${l_str}</td>
+						<td>${l_con}</td>
+						<td>${l_move}</td>
+						<td>${l_body}</td>
+					</tr>
+
+					<tr>
+						<th>Derived Stats</th>
+						<th>LUCK</th>
+						<th>HUM</th>
+						<th>REC</th>
+						<th>END</th>
+						<th>RUN</th>
+						<th>SPR</th>
+						<th>SWIM</th>
+						<th>LEAP</th>
+						<th>HITS</th>
+						<th>STUN</th>
+					</tr>
+					<tr>
+						<th>Stat Value</th>
+						<td>${l_luck}</td>
+						<td>${l_hum}</td>
+						<td>${l_rec}</td>
+						<td>${l_end}</td>
+						<td>${l_run}</td>
+						<td>${l_spr}</td>
+						<td>${l_swim}</td>
+						<td>${l_leap}</td>
+						<td>${l_hits}</td>
+						<td>${l_stun}</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th>KEYSKILLS</th>
+						<th>LVL</th>
+						<th>KEYPERKS/TALENTS</th>
+						<th>LVL</th>
+					</tr>
+					<tr>
+						<td>${l_ks1}</td>
+						<td>${l_ks1_lvl}</td>
+						<td>${l_kp1}</td>
+						<td>${l_kp1_lvl}</td>
+					</tr>
+					<tr>
+						<td>${l_ks2}</td>
+						<td>${l_ks2_lvl}</td>
+						<td>${l_kp2}</td>
+						<td>${l_kp2_lvl}</td>
+					</tr>
+					<tr>
+						<th>LIFEPATH</th>
+						<td colspan="3">${l_lp}</td>
+					</tr>
+					<tr>
+						<th>GOALS</th>
+						<td colspan="3">$l_goals}</td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="body">
+				<table width=100%>
+					<tr>
+						<th>TROOPS:</th>
+						<th>Leaders</th>
+						<td>${leaders}</td>
+					</tr>
+					<tr>
+						<th></th>
+						<th>Soldiers</th>
+						<td>${soldiers}</td>
+					</tr>
+					<tr>
+						<th></th>
+						<th>Grunts</th>
+						<td>${grunts}</td>
+					</tr>
+					<tr>
+						<th>ASSETS:</th>
+						<td colspan="2">${assets}</td>
+					</tr>
+					<tr>
+						<th>VEHICLES:</th>
+						<td colspan="2">${vehicles}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 
 
