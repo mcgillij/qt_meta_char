@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'meta_char_window.ui'
 #
-# Created: Wed Jun  3 22:35:14 2015
+# Created: Fri Jun  5 01:04:53 2015
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -633,12 +633,12 @@ class Ui_MainWindow(object):
         self.label_14 = QtGui.QLabel(self.groupBox_7)
         self.label_14.setObjectName(_fromUtf8("label_14"))
         self.formLayout_6.setWidget(1, QtGui.QFormLayout.LabelRole, self.label_14)
-        self.plainTextEditRHLP = QtGui.QPlainTextEdit(self.groupBox_7)
-        self.plainTextEditRHLP.setObjectName(_fromUtf8("plainTextEditRHLP"))
-        self.formLayout_6.setWidget(1, QtGui.QFormLayout.FieldRole, self.plainTextEditRHLP)
         self.plainTextEditRHGoals = QtGui.QPlainTextEdit(self.groupBox_7)
         self.plainTextEditRHGoals.setObjectName(_fromUtf8("plainTextEditRHGoals"))
-        self.formLayout_6.setWidget(0, QtGui.QFormLayout.FieldRole, self.plainTextEditRHGoals)
+        self.formLayout_6.setWidget(1, QtGui.QFormLayout.FieldRole, self.plainTextEditRHGoals)
+        self.plainTextEditRHLP = QtGui.QPlainTextEdit(self.groupBox_7)
+        self.plainTextEditRHLP.setObjectName(_fromUtf8("plainTextEditRHLP"))
+        self.formLayout_6.setWidget(0, QtGui.QFormLayout.FieldRole, self.plainTextEditRHLP)
         self.verticalLayout_2.addWidget(self.groupBox_7)
         self.horizontalLayout_7.addWidget(self.groupBox_5)
         self.tabWidget.addTab(self.tab_3, _fromUtf8(""))

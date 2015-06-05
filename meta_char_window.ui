@@ -1678,10 +1678,10 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QPlainTextEdit" name="plainTextEditRHLP"/>
+               <widget class="QPlainTextEdit" name="plainTextEditRHGoals"/>
               </item>
               <item row="0" column="1">
-               <widget class="QPlainTextEdit" name="plainTextEditRHGoals"/>
+               <widget class="QPlainTextEdit" name="plainTextEditRHLP"/>
               </item>
              </layout>
             </widget>
