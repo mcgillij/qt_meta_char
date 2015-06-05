@@ -65,7 +65,7 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
             #html = '<h1>${name}Hi there</h1><p>${pants}hi2<br/></p>hi3'
             from string import Template
             s = Template(html_str)
-            d = dict(name='JASON', pants='army')
+            d = self.create_dict()
             s = s.safe_substitute(d)
             output = open(filename, 'w')
             output.write(str(s))
