@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>781</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Character Information</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>GroupBox</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::ExpandingFieldsGrow</enum>
+           </property>
+           <item row="1" column="0">
+            <widget class="QGraphicsView" name="graphicsView"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QGroupBox" name="groupBox_3">
+             <layout class="QFormLayout" name="formLayout_2">
+              <property name="fieldGrowthPolicy">
+               <enum>QFormLayout::ExpandingFieldsGrow</enum>
+              </property>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Lifepath:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit_3"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>Traits:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="lineEdit_4"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>Feel About People:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>You Value Most:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>Valued Person:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Valued Possesion:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Clothes:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>Hair:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>Affectations:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="0">
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>Origins:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="0">
+               <widget class="QLabel" name="label_13">
+                <property name="text">
+                 <string>Languages:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="14" column="0">
+               <widget class="QLabel" name="label_14">
+                <property name="text">
+                 <string>Background:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="lineEdit_5"/>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLineEdit" name="lineEdit_6"/>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLineEdit" name="lineEdit_7"/>
+              </item>
+              <item row="9" column="1">
+               <widget class="QLineEdit" name="lineEdit_8"/>
+              </item>
+              <item row="7" column="1">
+               <widget class="QLineEdit" name="lineEdit_9"/>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLineEdit" name="lineEdit_10"/>
+              </item>
+              <item row="11" column="1">
+               <widget class="QLineEdit" name="lineEdit_11"/>
+              </item>
+              <item row="12" column="1">
+               <widget class="QLineEdit" name="lineEdit_12"/>
+              </item>
+              <item row="13" column="1">
+               <widget class="QLineEdit" name="lineEdit_13"/>
+              </item>
+              <item row="14" column="1">
+               <widget class="QPlainTextEdit" name="plainTextEdit"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>Name:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEdit_2"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QGroupBox" name="groupBox">
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLineEdit" name="lineEdit"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>ChooseImage</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Stats / Skills / Perks</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Stats</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>Random Stats</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="">
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="2" column="4">
+               <widget class="QLabel" name="label_23">
+                <property name="text">
+                 <string>Run</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="9">
+               <widget class="QLabel" name="label_24">
+                <property name="text">
+                 <string>Stun</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="6">
+               <widget class="QLineEdit" name="lineROBrainSwim">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLabel" name="label_25">
+                <property name="text">
+                 <string>Rec</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="lineEditBrainTech">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="3">
+               <widget class="QLineEdit" name="lineROBrainEnd">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="9">
+               <widget class="QLineEdit" name="lineROBrainStun">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLineEdit" name="lineEditBrainInt">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="label_26">
+                <property name="text">
+                 <string>Dex</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLabel" name="label_27">
+                <property name="text">
+                 <string>End</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="lineROBrainHum">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QLineEdit" name="lineROBrainRec">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLabel" name="label_28">
+                <property name="text">
+                 <string>Cool</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QLineEdit" name="lineEditBrainCool">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="6">
+               <widget class="QLabel" name="label_29">
+                <property name="text">
+                 <string>Swim</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="8">
+               <widget class="QLineEdit" name="lineROBrainHits">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="5">
+               <widget class="QLineEdit" name="lineEditBrainWill">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="8">
+               <widget class="QLineEdit" name="lineEditBrainMove">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEditBrainRef">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_30">
+                <property name="text">
+                 <string>Ref</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_31">
+                <property name="text">
+                 <string>Hum</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QLabel" name="label_32">
+                <property name="text">
+                 <string>Will</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="label_33">
+                <property name="text">
+                 <string>Tech</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="7">
+               <widget class="QLineEdit" name="lineEditBrainCon">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="7">
+               <widget class="QLabel" name="label_34">
+                <property name="text">
+                 <string>Con</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="9">
+               <widget class="QLineEdit" name="lineEditBrainBody">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_35">
+                <property name="text">
+                 <string>Luck</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="QLineEdit" name="lineEditBrainStr">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="8">
+               <widget class="QLabel" name="label_36">
+                <property name="text">
+                 <string>Move</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="6">
+               <widget class="QLabel" name="label_37">
+                <property name="text">
+                 <string>Str</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="5">
+               <widget class="QLineEdit" name="lineROBrainSpr">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="9">
+               <widget class="QLabel" name="label_38">
+                <property name="text">
+                 <string>Body</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLineEdit" name="lineROBrainLuck">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="5">
+               <widget class="QLabel" name="label_39">
+                <property name="text">
+                 <string>Spr</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_40">
+                <property name="text">
+                 <string>Int</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="7">
+               <widget class="QLineEdit" name="lineROBrainLeap">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="lineEditBrainDex">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="7">
+               <widget class="QLabel" name="label_41">
+                <property name="text">
+                 <string>Leap</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="4">
+               <widget class="QLineEdit" name="lineROBrainRun">
+                <property name="minimumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>35</width>
+                  <height>22</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="8">
+               <widget class="QLabel" name="label_42">
+                <property name="text">
+                 <string>Hits</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_4">
+             <property name="title">
+              <string>Skills and Perks</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <layout class="QFormLayout" name="formLayout_3">
+                <property name="fieldGrowthPolicy">
+                 <enum>QFormLayout::ExpandingFieldsGrow</enum>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_15">
+                  <property name="text">
+                   <string>Key Skills</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_16">
+                  <property name="text">
+                   <string>LVL</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QComboBox" name="comboBox"/>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QComboBox" name="comboBox_2"/>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QComboBox" name="comboBox_3"/>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QComboBox" name="comboBox_4"/>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QComboBox" name="comboBox_5"/>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QComboBox" name="comboBox_6"/>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QComboBox" name="comboBoxSkills_2"/>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QComboBox" name="comboBox_8"/>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QComboBox" name="comboBox_9"/>
+                </item>
+                <item row="10" column="0">
+                 <widget class="QComboBox" name="comboBox_10"/>
+                </item>
+                <item row="11" column="0">
+                 <widget class="QComboBox" name="comboBox_11"/>
+                </item>
+                <item row="12" column="0">
+                 <widget class="QComboBox" name="comboBox_12"/>
+                </item>
+                <item row="13" column="0">
+                 <widget class="QComboBox" name="comboBox_13"/>
+                </item>
+                <item row="14" column="0">
+                 <widget class="QComboBox" name="comboBox_14"/>
+                </item>
+                <item row="15" column="0">
+                 <widget class="QComboBox" name="comboBoxSkills"/>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_15">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_16">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_17">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_18">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_19">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_20">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_21">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_22">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_23">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_24">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_25">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_26">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="13" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_27">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="14" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_28">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="15" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_29">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="16" column="0">
+                 <widget class="QComboBox" name="comboBoxSkills_3"/>
+                </item>
+                <item row="16" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_30">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayout_4">
+                <property name="fieldGrowthPolicy">
+                 <enum>QFormLayout::ExpandingFieldsGrow</enum>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_17">
+                  <property name="text">
+                   <string>Key Perks / Talents</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_18">
+                  <property name="text">
+                   <string>LVL</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QComboBox" name="comboBox_17"/>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QComboBox" name="comboBox_18"/>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPTwoLVL">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QComboBox" name="comboBox_19"/>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QComboBox" name="comboBox_20"/>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_4">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QComboBox" name="comboBox_21"/>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_5">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QComboBox" name="comboBox_22"/>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_6">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QComboBox" name="comboBox_23"/>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_7">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QComboBox" name="comboBox_24"/>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_8">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="0">
+                 <widget class="QComboBox" name="comboBox_25"/>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_9">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="0">
+                 <widget class="QComboBox" name="comboBox_26"/>
+                </item>
+                <item row="11" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_10">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="0">
+                 <widget class="QComboBox" name="comboBox_27"/>
+                </item>
+                <item row="12" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_11">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="13" column="0">
+                 <widget class="QComboBox" name="comboBox_28"/>
+                </item>
+                <item row="13" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_12">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="14" column="0">
+                 <widget class="QComboBox" name="comboBox_29"/>
+                </item>
+                <item row="14" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_13">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="15" column="0">
+                 <widget class="QComboBox" name="comboBox_30"/>
+                </item>
+                <item row="15" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_14">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="16" column="0">
+                 <widget class="QComboBox" name="comboBox_31"/>
+                </item>
+                <item row="16" column="1">
+                 <widget class="QLineEdit" name="lineEditBrainKPOneLVL_31">
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>35</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="maxLength">
+                   <number>3</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Outfit / Cybertech</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Outfit and Cybertech</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout_5">
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="lineEdit_14"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_15"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLineEdit" name="lineEdit_16"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLineEdit" name="lineEdit_17"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLineEdit" name="lineEdit_18"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLineEdit" name="lineEdit_19"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLineEdit" name="lineEdit_20"/>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLineEdit" name="lineEdit_21"/>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLineEdit" name="lineEdit_22"/>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLineEdit" name="lineEdit_23"/>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLineEdit" name="lineEdit_24"/>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLineEdit" name="lineEdit_25"/>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLineEdit" name="lineEdit_26"/>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLineEdit" name="lineEdit_27"/>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLineEdit" name="lineEdit_28"/>
+           </item>
+           <item row="15" column="0">
+            <widget class="QLineEdit" name="lineEdit_29"/>
+           </item>
+           <item row="16" column="0">
+            <widget class="QLineEdit" name="lineEdit_30"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit_31"/>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineEdit_32"/>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_33"/>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_34"/>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="lineEdit_35"/>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLineEdit" name="lineEdit_36"/>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLineEdit" name="lineEdit_37"/>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="lineEdit_38"/>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLineEdit" name="lineEdit_39"/>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLineEdit" name="lineEdit_40"/>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLineEdit" name="lineEdit_41"/>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLineEdit" name="lineEdit_42"/>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLineEdit" name="lineEdit_43"/>
+           </item>
+           <item row="15" column="1">
+            <widget class="QLineEdit" name="lineEdit_44"/>
+           </item>
+           <item row="16" column="1">
+            <widget class="QLineEdit" name="lineEdit_45"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Outfit &amp; Core Cybertech</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>Location:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Weapons / Attacks</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>GroupBox</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_118"/>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLineEdit" name="lineEdit_121"/>
+           </item>
+           <item row="4" column="8">
+            <widget class="QLineEdit" name="lineEdit_98"/>
+           </item>
+           <item row="6" column="3">
+            <widget class="QLineEdit" name="lineEdit_75"/>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="lineEdit_58"/>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLineEdit" name="lineEdit_46"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_20">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Weapons or Attacks:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_21">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>WA</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="label_44">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>DAMAGE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_22">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>CON</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="5">
+            <widget class="QLineEdit" name="lineEdit_51"/>
+           </item>
+           <item row="10" column="6">
+            <widget class="QLineEdit" name="lineEdit_52"/>
+           </item>
+           <item row="6" column="8">
+            <widget class="QLineEdit" name="lineEdit_80"/>
+           </item>
+           <item row="5" column="6">
+            <widget class="QLineEdit" name="lineEdit_87"/>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLineEdit" name="lineEdit_68"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLineEdit" name="lineEdit_70"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLineEdit" name="lineEdit_69"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLineEdit" name="lineEdit_71"/>
+           </item>
+           <item row="6" column="9">
+            <widget class="QLineEdit" name="lineEdit_81"/>
+           </item>
+           <item row="5" column="3">
+            <widget class="QLineEdit" name="lineEdit_84"/>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_82"/>
+           </item>
+           <item row="5" column="2">
+            <widget class="QLineEdit" name="lineEdit_83"/>
+           </item>
+           <item row="5" column="5">
+            <widget class="QLineEdit" name="lineEdit_86"/>
+           </item>
+           <item row="5" column="8">
+            <widget class="QLineEdit" name="lineEdit_89"/>
+           </item>
+           <item row="5" column="4">
+            <widget class="QLineEdit" name="lineEdit_85"/>
+           </item>
+           <item row="5" column="7">
+            <widget class="QLineEdit" name="lineEdit_88"/>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_91"/>
+           </item>
+           <item row="5" column="9">
+            <widget class="QLineEdit" name="lineEdit_90"/>
+           </item>
+           <item row="4" column="5">
+            <widget class="QLineEdit" name="lineEdit_95"/>
+           </item>
+           <item row="4" column="2">
+            <widget class="QLineEdit" name="lineEdit_92"/>
+           </item>
+           <item row="4" column="4">
+            <widget class="QLineEdit" name="lineEdit_94"/>
+           </item>
+           <item row="4" column="3">
+            <widget class="QLineEdit" name="lineEdit_93"/>
+           </item>
+           <item row="4" column="6">
+            <widget class="QLineEdit" name="lineEdit_96"/>
+           </item>
+           <item row="4" column="7">
+            <widget class="QLineEdit" name="lineEdit_97"/>
+           </item>
+           <item row="4" column="9">
+            <widget class="QLineEdit" name="lineEdit_99"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLineEdit" name="lineEdit_110"/>
+           </item>
+           <item row="3" column="6">
+            <widget class="QLineEdit" name="lineEdit_105"/>
+           </item>
+           <item row="3" column="5">
+            <widget class="QLineEdit" name="lineEdit_104"/>
+           </item>
+           <item row="3" column="4">
+            <widget class="QLineEdit" name="lineEdit_103"/>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineEdit_100"/>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLineEdit" name="lineEdit_101"/>
+           </item>
+           <item row="3" column="7">
+            <widget class="QLineEdit" name="lineEdit_106"/>
+           </item>
+           <item row="3" column="3">
+            <widget class="QLineEdit" name="lineEdit_102"/>
+           </item>
+           <item row="3" column="9">
+            <widget class="QLineEdit" name="lineEdit_108"/>
+           </item>
+           <item row="3" column="8">
+            <widget class="QLineEdit" name="lineEdit_107"/>
+           </item>
+           <item row="2" column="6">
+            <widget class="QLineEdit" name="lineEdit_114"/>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLineEdit" name="lineEdit_111"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit_109"/>
+           </item>
+           <item row="2" column="5">
+            <widget class="QLineEdit" name="lineEdit_113"/>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLineEdit" name="lineEdit_112"/>
+           </item>
+           <item row="2" column="9">
+            <widget class="QLineEdit" name="lineEdit_117"/>
+           </item>
+           <item row="2" column="7">
+            <widget class="QLineEdit" name="lineEdit_115"/>
+           </item>
+           <item row="1" column="6">
+            <widget class="QLineEdit" name="lineEdit_123"/>
+           </item>
+           <item row="2" column="8">
+            <widget class="QLineEdit" name="lineEdit_116"/>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="lineEdit_119"/>
+           </item>
+           <item row="1" column="5">
+            <widget class="QLineEdit" name="lineEdit_122"/>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="lineEdit_120"/>
+           </item>
+           <item row="1" column="7">
+            <widget class="QLineEdit" name="lineEdit_124"/>
+           </item>
+           <item row="1" column="9">
+            <widget class="QLineEdit" name="lineEdit_126"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLineEdit" name="lineEdit_67"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="lineEdit_72"/>
+           </item>
+           <item row="6" column="2">
+            <widget class="QLineEdit" name="lineEdit_74"/>
+           </item>
+           <item row="6" column="5">
+            <widget class="QLineEdit" name="lineEdit_77"/>
+           </item>
+           <item row="6" column="7">
+            <widget class="QLineEdit" name="lineEdit_79"/>
+           </item>
+           <item row="1" column="8">
+            <widget class="QLineEdit" name="lineEdit_125"/>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_43">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>AV</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="label_45">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>SHOTS</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QLabel" name="label_46">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>ROF</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QLabel" name="label_47">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>REL</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="8">
+            <widget class="QLabel" name="label_48">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>RANGE</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLineEdit" name="lineEdit_47"/>
+           </item>
+           <item row="10" column="8">
+            <widget class="QLineEdit" name="lineEdit_59"/>
+           </item>
+           <item row="10" column="9">
+            <widget class="QLineEdit" name="lineEdit_55"/>
+           </item>
+           <item row="8" column="7">
+            <widget class="QLineEdit" name="lineEdit_53"/>
+           </item>
+           <item row="8" column="9">
+            <widget class="QLineEdit" name="lineEdit_56"/>
+           </item>
+           <item row="0" column="9">
+            <widget class="QLabel" name="label_49">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>COST</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="5">
+            <widget class="QLineEdit" name="lineEdit_61"/>
+           </item>
+           <item row="8" column="3">
+            <widget class="QLineEdit" name="lineEdit_63"/>
+           </item>
+           <item row="8" column="2">
+            <widget class="QLineEdit" name="lineEdit_64"/>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLineEdit" name="lineEdit_65"/>
+           </item>
+           <item row="6" column="4">
+            <widget class="QLineEdit" name="lineEdit_76"/>
+           </item>
+           <item row="6" column="6">
+            <widget class="QLineEdit" name="lineEdit_78"/>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLineEdit" name="lineEdit_66"/>
+           </item>
+           <item row="10" column="2">
+            <widget class="QLineEdit" name="lineEdit_48"/>
+           </item>
+           <item row="10" column="4">
+            <widget class="QLineEdit" name="lineEdit_50"/>
+           </item>
+           <item row="10" column="3">
+            <widget class="QLineEdit" name="lineEdit_49"/>
+           </item>
+           <item row="8" column="8">
+            <widget class="QLineEdit" name="lineEdit_57"/>
+           </item>
+           <item row="8" column="4">
+            <widget class="QLineEdit" name="lineEdit_62"/>
+           </item>
+           <item row="10" column="7">
+            <widget class="QLineEdit" name="lineEdit_54"/>
+           </item>
+           <item row="8" column="6">
+            <widget class="QLineEdit" name="lineEdit_60"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
