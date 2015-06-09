@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'meta_char_window.ui'
 #
-# Created: Mon Jun  8 22:31:31 2015
+# Created: Tue Jun  9 01:39:20 2015
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!
