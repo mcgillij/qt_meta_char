@@ -193,7 +193,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
 
 )
         return my_dict
-
+    #diag windows
     def showTestDialog(self):
         pprint(dir(self.char))
     def showOpenDialog(self):
@@ -203,12 +203,27 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
             char = self.char.load_from_disk(filename)
             self.char = char
             self.update_all_derived_fields()
+            scene = QtGui.QGraphicsScene()
+            scene.addPixmap(QtGui.QPixmap(self.char.image_path))
+            self.graphicsView.setScene(scene)
+            self.graphicsView.show()
 
     def showSaveDialog(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Save File', "*")
         print "saving", filename, "\n"
         if filename:
             self.char.save_to_disk(filename)
+    def showChooseImageDialog(self):
+        filename = QtGui.QFileDialog.getOpenFileName(self, 'Choose Image', "*.png")
+        print "trying to load up", filename, "as an image \n"
+        if filename:
+            self.char.image_path = filename
+            self.lineROImagePath.setText(str(filename))
+            scene = QtGui.QGraphicsScene()
+            scene.addPixmap(QtGui.QPixmap(filename))
+            self.graphicsView.setScene(scene)
+            self.graphicsView.show()
+    # onChange events
     def onNameTextChanged(self, text):
         print text
         self.char.name = str(text)
@@ -263,16 +278,6 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         text = self.plainTextEditWeapons.toPlainText()
         print text
         self.char.weapons = str(text)
-    def showChooseImageDialog(self):
-        filename = QtGui.QFileDialog.getOpenFileName(self, 'Choose Image', "*.png")
-        print "trying to load up", filename, "as an image \n"
-        if filename:
-            self.char.image_path = filename
-            self.lineROImagePath.setText(str(filename))
-            scene = QtGui.QGraphicsScene()
-            scene.addPixmap(QtGui.QPixmap(filename))
-            self.graphicsView.setScene(scene)
-            self.graphicsView.show()
 
 
     # hooks up all the textfields / areas
@@ -557,10 +562,10 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.update_all_derived_fields()
 
     def update_all_derived_fields(self):
-        # key skills
         self.lineEditName.setText(str(self.char.name))
         self.lineEditReputation.setText(str(self.char.reputation))
         self.lineEditIP.setText(str(self.char.ip))
+        self.lineROImagePath.setText(str(self.char.image_path))
         self.lineEditLifepath.setText(str(self.char.lifepath))
         self.lineEditTraits.setText(str(self.char.traits))
         self.lineEditFeelAboutPeople.setText(str(self.char.feel_about_people))
