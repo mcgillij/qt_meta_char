@@ -3,6 +3,7 @@ import os, glob, pickle
 
 class Char:
     def __init__(self):
+        self.image_path = ""
         self.name = ""
         self.reputation = 0
         self.ip = 0
@@ -69,7 +70,7 @@ class Char:
         self.skill_15 = ""
         self.skill_15_lvl = 0
         self.skill_16 = ""
-        self.skill_16 = 0
+        self.skill_16_lvl = 0
         self.perk_1 = ""
         self.perk_1_lvl = 0
         self.perk_2 = ""
@@ -101,7 +102,7 @@ class Char:
         self.perk_15 = ""
         self.perk_15_lvl = 0
         self.perk_16 = ""
-        self.perk_16 = 0
+        self.perk_16_lvl = 0
         self.outfit = ""
         self.weapons = ""
 
@@ -115,9 +116,9 @@ class Char:
     def load_from_disk(self, filename):
         print "Attempting to load from disk with pickle"
         load_file = file(filename, "rb")
-        meta_char = pickle.load(load_file)
+        char = pickle.load(load_file)
         load_file.close()
-        return meta_char
+        return char
 
 class MetaChar:
     def __init__(self):

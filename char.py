@@ -42,16 +42,16 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         export_pdf_action.setShortcut('Ctrl+p')
         export_pdf_action.setStatusTip('Export to PDF')
         export_pdf_action.triggered.connect(self.export_to_pdf)
-        #test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
-        #test_action.setShortcut('Ctrl+T')
-        #test_action.setStatusTip('TestAction')
-        #test_action.triggered.connect(self.showTestDialog)
+        test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
+        test_action.setShortcut('Ctrl+T')
+        test_action.setStatusTip('TestAction')
+        test_action.triggered.connect(self.showTestDialog)
         menubar = self.menuBar()
 
         file_menu = menubar.addMenu('&File')
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
-        #file_menu.addAction(test_action)
+        file_menu.addAction(test_action)
         file_menu.addAction(export_html_action)
         file_menu.addAction(export_pdf_action)
         file_menu.addAction(exit_action)
@@ -59,7 +59,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def export_to_html(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to HTML', "*.html")
         if filename:
-            html = open('meta_char_sheet.html', 'r')
+            html = open('char_sheet.html', 'r')
             html_str = html.read()
             html.close()
             #html = '<h1>${name}Hi there</h1><p>${pants}hi2<br/></p>hi3'
@@ -75,7 +75,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def export_to_pdf(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to PDF', "*.pdf")
         if filename:
-            html = open('meta_char_sheet.html', 'r')
+            html = open('char_sheet.html', 'r')
             html_str = html.read()
             html.close()
             from string import Template
@@ -86,138 +86,129 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
 
     def create_dict(self):
         #shortcuts
-        b = self.meta_char.brain
-        l = self.meta_char.left_hand
-        r = self.meta_char.right_hand
-        bd = self.meta_char.body
+        c = self.char
         my_dict = dict(
-                name=self.meta_char.name,
-                history=self.meta_char.history,
-                b_name=b.name,
-                b_int=b.intelligence,
-                b_ref=b.reflex,
-                b_tech=b.technology,
-                b_dex=b.dexterity,
-                b_cool=b.cool,
-                b_will=b.will,
-                b_str=b.strength,
-                b_con=b.constitution,
-                b_move=b.move,
-                b_body=b.body,
-                b_luck=b.luck,
-                b_hum=b.humanity,
-                b_rec=b.recovery,
-                b_end=b.endurance,
-                b_run=b.run,
-                b_spr=b.sprint,
-                b_swim=b.swim,
-                b_leap=b.leap,
-                b_hits=b.hits,
-                b_stun=b.stun,
-                b_ks1=b.key_skill_1,
-                b_ks1_lvl=b.key_skill_1_lvl,
-                b_ks2=b.key_skill_2,
-                b_ks2_lvl=b.key_skill_2_lvl,
-                b_kp1=b.key_perk_1,
-                b_kp1_lvl=b.key_perk_1_lvl,
-                b_kp2=b.key_perk_2,
-                b_kp2_lvl=b.key_perk_2_lvl,
-                b_lp=b.lifepath,
-                b_goals=b.goals,
+                name=c.char.name,
+                image_path = c.image_path,
+                reputation = c.reputation,
+                ip = c.ip,
+                lifepath = c.lifepath,
+                traits = c.traits,
+                feel_about_people = c.feel_about_people,
+                you_value_most = c.you_value_most,
+                valued_person = c.valued_person,
+                valued_possesion = c.valued_possesion,
+                clothes = c.clothes,
+                hair = c.hair,
+                affectations = c.affectations,
+                origins = c.origins,
+                languages = c.languages,
+                background = c.background,
+                int=c.intelligence,
+                ref=c.reflex,
+                tech=c.technology,
+                dex=c.dexterity,
+                cool=c.cool,
+                will=c.will,
+                str=c.strength,
+                con=c.constitution,
+                move=c.move,
+                body=c.body,
+                luck=c.luck,
+                hum=c.humanity,
+                rec=c.recovery,
+                end=c.endurance,
+                run=c.run,
+                spr=c.sprint,
+                swim=c.swim,
+                leap=c.leap,
+                hits=c.hits,
+                stun=c.stun,
+                skill_1 = c.skill_1,
+                skill_1_lvl = c.skill_1_lvl,
+                skill_2 = c.skill_2,
+                skill_2_lvl = c.skill_2_lvl,
+                skill_3 = c.skill_3,
+                skill_3_lvl = c.skill_3_lvl,
+                skill_4 = c.skill_4,
+                skill_4_lvl = c.skill_4_lvl,
+                skill_5 = c.skill_5,
+                skill_5_lvl = c.skill_5_lvl,
+                skill_6 = c.skill_6,
+                skill_6_lvl = c.skill_6_lvl,
+                skill_7 = c.skill_7,
+                skill_7_lvl = c.skill_7_lvl,
+                skill_8 = c.skill_8,
+                skill_8_lvl = c.skill_8_lvl,
+                skill_9 = c.skill_9,
+                skill_9_lvl = c.skill_9_lvl,
+                skill_10 = c.skill_10,
+                skill_10_lvl = c.skill_10_lvl,
+                skill_11 = c.skill_11,
+                skill_11_lvl = c.skill_11_lvl,
+                skill_12 = c.skill_12,
+                skill_12_lvl = c.skill_12_lvl,
+                skill_13 = c.skill_13,
+                skill_13_lvl = c.skill_13_lvl,
+                skill_14 = c.skill_14,
+                skill_14_lvl = c.skill_14_lvl,
+                skill_15 = c.skill_15,
+                skill_15_lvl = c.skill_15_lvl,
+                skill_16 = c.skill_16,
+                skill_16_lvl = c.skill_16_lvl,
+                perk_1 = c.perk_1,
+                perk_1_lvl = c.perk_1_lvl,
+                perk_2 = c.perk_2,
+                perk_2_lvl = c.perk_2_lvl,
+                perk_3 = c.perk_3,
+                perk_3_lvl = c.perk_3_lvl,
+                perk_4 = c.perk_4,
+                perk_4_lvl = c.perk_4_lvl,
+                perk_5 = c.perk_5,
+                perk_5_lvl = c.perk_5_lvl,
+                perk_6 = c.perk_6,
+                perk_6_lvl = c.perk_6_lvl,
+                perk_7 = c.perk_7,
+                perk_7_lvl = c.perk_7_lvl,
+                perk_8 = c.perk_8,
+                perk_8_lvl = c.perk_8_lvl,
+                perk_9 = c.perk_9,
+                perk_9_lvl = c.perk_9_lvl,
+                perk_10 = c.perk_10,
+                perk_10_lvl = c.perk_10_lvl,
+                perk_11 = c.perk_11,
+                perk_11_lvl = c.perk_11_lvl,
+                perk_12 = c.perk_12,
+                perk_12_lvl = c.perk_12_lvl,
+                perk_13 = c.perk_13,
+                perk_13_lvl = c.perk_13_lvl,
+                perk_14 = c.perk_14,
+                perk_14_lvl = c.perk_14_lvl,
+                perk_15 = c.perk_15,
+                perk_15_lvl = c.perk_15_lvl,
+                perk_16 = c.perk_16,
+                perk_16_lvl = c.perk_16_lvl,
+                outfit = c.outfit,
+                weapons = c.weapons
 
-                l_name=l.name,
-                l_int=l.intelligence,
-                l_ref=l.reflex,
-                l_tech=l.technology,
-                l_dex=l.dexterity,
-                l_cool=l.cool,
-                l_will=l.will,
-                l_str=l.strength,
-                l_con=l.constitution,
-                l_move=l.move,
-                l_body=l.body,
-                l_luck=l.luck,
-                l_hum=l.humanity,
-                l_rec=l.recovery,
-                l_end=l.endurance,
-                l_run=l.run,
-                l_spr=l.sprint,
-                l_swim=l.swim,
-                l_leap=l.leap,
-                l_hits=l.hits,
-                l_stun=l.stun,
-                l_ks1=l.key_skill_1,
-                l_ks1_lvl=l.key_skill_1_lvl,
-                l_ks2=l.key_skill_2,
-                l_ks2_lvl=l.key_skill_2_lvl,
-                l_kp1=l.key_perk_1,
-                l_kp1_lvl=l.key_perk_1_lvl,
-                l_kp2=l.key_perk_2,
-                l_kp2_lvl=l.key_perk_2_lvl,
-                l_lp=l.lifepath,
-                l_goals=l.goals,
-
-                r_name=r.name,
-                r_int=r.intelligence,
-                r_ref=r.reflex,
-                r_tech=r.technology,
-                r_dex=r.dexterity,
-                r_cool=r.cool,
-                r_will=r.will,
-                r_str=r.strength,
-                r_con=r.constitution,
-                r_move=r.move,
-                r_body=r.body,
-                r_luck=r.luck,
-                r_hum=r.humanity,
-                r_rec=r.recovery,
-                r_end=r.endurance,
-                r_run=r.run,
-                r_spr=r.sprint,
-                r_swim=r.swim,
-                r_leap=r.leap,
-                r_hits=r.hits,
-                r_stun=r.stun,
-                r_ks1=r.key_skill_1,
-                r_ks1_lvl=r.key_skill_1_lvl,
-                r_ks2=r.key_skill_2,
-                r_ks2_lvl=r.key_skill_2_lvl,
-                r_kp1=r.key_perk_1,
-                r_kp1_lvl=r.key_perk_1_lvl,
-                r_kp2=r.key_perk_2,
-                r_kp2_lvl=r.key_perk_2_lvl,
-                r_lp=r.lifepath,
-                r_goals=r.goals,
-
-                bd_leaders=bd.leaders,
-                bd_soldiers=bd.soldiers,
-                bd_grunts=bd.grunts,
-                bd_assets=bd.assets,
-                bd_vehicles=bd.vehicles
-
-                )
+)
         return my_dict
 
     def showTestDialog(self):
-        print "From Test Action:", self.meta_char.name, self.meta_char.history, "brain: ", self.meta_char.brain.intelligence
-
+        pprint(dir(self.char))
     def showOpenDialog(self):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '/home')
         print "opening", filename, "\n"
         if filename:
-            meta_char = self.meta_char.load_from_disk(filename)
-            self.meta_char = meta_char
-            self.update_all_mc_fields()
-            self.update_body_fields()
-            self.update_all_brain_derived_fields()
-            self.update_all_right_hand_derived_fields()
-            self.update_all_left_hand_derived_fields()
+            char = self.char.load_from_disk(filename)
+            self.char = char
+            self.update_all_derived_fields()
 
     def showSaveDialog(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Save File', "*")
         print "saving", filename, "\n"
         if filename:
-            self.meta_char.save_to_disk(filename)
+            self.char.save_to_disk(filename)
     def onNameTextChanged(self, text):
         print text
         self.char.name = str(text)
@@ -272,9 +263,21 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         text = self.plainTextEditWeapons.toPlainText()
         print text
         self.char.weapons = str(text)
+    def showChooseImageDialog(self):
+        filename = QtGui.QFileDialog.getOpenFileName(self, 'Choose Image', "*.png")
+        print "trying to load up", filename, "as an image \n"
+        if filename:
+            self.char.image_path = filename
+            self.lineROImagePath.setText(str(filename))
+            scene = QtGui.QGraphicsScene()
+            scene.addPixmap(QtGui.QPixmap(filename))
+            self.graphicsView.setScene(scene)
+            self.graphicsView.show()
+
 
     # hooks up all the textfields / areas
     def init_ui(self):
+        self.pushButtonChooseImage.clicked.connect(self.showChooseImageDialog)
         self.lineEditName.textChanged.connect(self.onNameTextChanged)
         self.lineEditReputation.textChanged.connect(self.onReputationTextChanged)
         self.lineEditIP.textChanged.connect(self.onIPTextChanged)
@@ -315,7 +318,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.cb_skill_6.activated[str].connect(self.onSkill6Activated)
         self.cb_skill_7.activated[str].connect(self.onSkill7Activated)
         self.cb_skill_8.activated[str].connect(self.onSkill8Activated)
-        self.cb_skill_9.activated[str].connect(self.onSkill8Activated)
+        self.cb_skill_9.activated[str].connect(self.onSkill9Activated)
         self.cb_skill_10.activated[str].connect(self.onSkill10Activated)
         self.cb_skill_11.activated[str].connect(self.onSkill11Activated)
         self.cb_skill_12.activated[str].connect(self.onSkill12Activated)
@@ -323,22 +326,22 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.cb_skill_14.activated[str].connect(self.onSkill14Activated)
         self.cb_skill_15.activated[str].connect(self.onSkill15Activated)
         self.cb_skill_16.activated[str].connect(self.onSkill16Activated)
-        self.skill_1_lvl.textChanged.connect(self.onSkill1LVLTextChanged)
-        self.skill_2_lvl.textChanged.connect(self.onSkill2LVLTextChanged)
-        self.skill_3_lvl.textChanged.connect(self.onSkill3LVLTextChanged)
-        self.skill_4_lvl.textChanged.connect(self.onSkill4LVLTextChanged)
-        self.skill_5_lvl.textChanged.connect(self.onSkill5LVLTextChanged)
-        self.skill_6_lvl.textChanged.connect(self.onSkill6LVLTextChanged)
-        self.skill_7_lvl.textChanged.connect(self.onSkill7LVLTextChanged)
-        self.skill_8_lvl.textChanged.connect(self.onSkill8LVLTextChanged)
-        self.skill_9_lvl.textChanged.connect(self.onSkill9LVLTextChanged)
-        self.skill_10_lvl.textChanged.connect(self.onSkill10LVLTextChanged)
-        self.skill_11_lvl.textChanged.connect(self.onSkill11LVLTextChanged)
-        self.skill_12_lvl.textChanged.connect(self.onSkill12LVLTextChanged)
-        self.skill_13_lvl.textChanged.connect(self.onSkill13LVLTextChanged)
-        self.skill_14_lvl.textChanged.connect(self.onSkill14LVLTextChanged)
-        self.skill_15_lvl.textChanged.connect(self.onSkill15LVLTextChanged)
-        self.skill_16_lvl.textChanged.connect(self.onSkill16LVLTextChanged)
+        self.le_skill_1_lvl.textChanged.connect(self.onSkill1LVLTextChanged)
+        self.le_skill_2_lvl.textChanged.connect(self.onSkill2LVLTextChanged)
+        self.le_skill_3_lvl.textChanged.connect(self.onSkill3LVLTextChanged)
+        self.le_skill_4_lvl.textChanged.connect(self.onSkill4LVLTextChanged)
+        self.le_skill_5_lvl.textChanged.connect(self.onSkill5LVLTextChanged)
+        self.le_skill_6_lvl.textChanged.connect(self.onSkill6LVLTextChanged)
+        self.le_skill_7_lvl.textChanged.connect(self.onSkill7LVLTextChanged)
+        self.le_skill_8_lvl.textChanged.connect(self.onSkill8LVLTextChanged)
+        self.le_skill_9_lvl.textChanged.connect(self.onSkill9LVLTextChanged)
+        self.le_skill_10_lvl.textChanged.connect(self.onSkill10LVLTextChanged)
+        self.le_skill_11_lvl.textChanged.connect(self.onSkill11LVLTextChanged)
+        self.le_skill_12_lvl.textChanged.connect(self.onSkill12LVLTextChanged)
+        self.le_skill_13_lvl.textChanged.connect(self.onSkill13LVLTextChanged)
+        self.le_skill_14_lvl.textChanged.connect(self.onSkill14LVLTextChanged)
+        self.le_skill_15_lvl.textChanged.connect(self.onSkill15LVLTextChanged)
+        self.le_skill_16_lvl.textChanged.connect(self.onSkill16LVLTextChanged)
         #perks
         self.cb_perk_1.activated[str].connect(self.onPerk1Activated)
         self.cb_perk_2.activated[str].connect(self.onPerk2Activated)
@@ -348,7 +351,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.cb_perk_6.activated[str].connect(self.onPerk6Activated)
         self.cb_perk_7.activated[str].connect(self.onPerk7Activated)
         self.cb_perk_8.activated[str].connect(self.onPerk8Activated)
-        self.cb_perk_9.activated[str].connect(self.onPerk8Activated)
+        self.cb_perk_9.activated[str].connect(self.onPerk9Activated)
         self.cb_perk_10.activated[str].connect(self.onPerk10Activated)
         self.cb_perk_11.activated[str].connect(self.onPerk11Activated)
         self.cb_perk_12.activated[str].connect(self.onPerk12Activated)
@@ -356,22 +359,22 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.cb_perk_14.activated[str].connect(self.onPerk14Activated)
         self.cb_perk_15.activated[str].connect(self.onPerk15Activated)
         self.cb_perk_16.activated[str].connect(self.onPerk16Activated)
-        self.perk_1_lvl.textChanged.connect(self.onPerk1LVLTextChanged)
-        self.perk_2_lvl.textChanged.connect(self.onPerk2LVLTextChanged)
-        self.perk_3_lvl.textChanged.connect(self.onPerk3LVLTextChanged)
-        self.perk_4_lvl.textChanged.connect(self.onPerk4LVLTextChanged)
-        self.perk_5_lvl.textChanged.connect(self.onPerk5LVLTextChanged)
-        self.perk_6_lvl.textChanged.connect(self.onPerk6LVLTextChanged)
-        self.perk_7_lvl.textChanged.connect(self.onPerk7LVLTextChanged)
-        self.perk_8_lvl.textChanged.connect(self.onPerk8LVLTextChanged)
-        self.perk_9_lvl.textChanged.connect(self.onPerk9LVLTextChanged)
-        self.perk_10_lvl.textChanged.connect(self.onPerk10LVLTextChanged)
-        self.perk_11_lvl.textChanged.connect(self.onPerk11LVLTextChanged)
-        self.perk_12_lvl.textChanged.connect(self.onPerk12LVLTextChanged)
-        self.perk_13_lvl.textChanged.connect(self.onPerk13LVLTextChanged)
-        self.perk_14_lvl.textChanged.connect(self.onPerk14LVLTextChanged)
-        self.perk_15_lvl.textChanged.connect(self.onPerk15LVLTextChanged)
-        self.perk_16_lvl.textChanged.connect(self.onPerk16LVLTextChanged)
+        self.le_perk_1_lvl.textChanged.connect(self.onPerk1LVLTextChanged)
+        self.le_perk_2_lvl.textChanged.connect(self.onPerk2LVLTextChanged)
+        self.le_perk_3_lvl.textChanged.connect(self.onPerk3LVLTextChanged)
+        self.le_perk_4_lvl.textChanged.connect(self.onPerk4LVLTextChanged)
+        self.le_perk_5_lvl.textChanged.connect(self.onPerk5LVLTextChanged)
+        self.le_perk_6_lvl.textChanged.connect(self.onPerk6LVLTextChanged)
+        self.le_perk_7_lvl.textChanged.connect(self.onPerk7LVLTextChanged)
+        self.le_perk_8_lvl.textChanged.connect(self.onPerk8LVLTextChanged)
+        self.le_perk_9_lvl.textChanged.connect(self.onPerk9LVLTextChanged)
+        self.le_perk_10_lvl.textChanged.connect(self.onPerk10LVLTextChanged)
+        self.le_perk_11_lvl.textChanged.connect(self.onPerk11LVLTextChanged)
+        self.le_perk_12_lvl.textChanged.connect(self.onPerk12LVLTextChanged)
+        self.le_perk_13_lvl.textChanged.connect(self.onPerk13LVLTextChanged)
+        self.le_perk_14_lvl.textChanged.connect(self.onPerk14LVLTextChanged)
+        self.le_perk_15_lvl.textChanged.connect(self.onPerk15LVLTextChanged)
+        self.le_perk_16_lvl.textChanged.connect(self.onPerk16LVLTextChanged)
     #skills
     def onSkill1Activated(self, text):
         self.char.skill_1 = str(text)
@@ -406,37 +409,37 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def onSkill16Activated(self, text):
         self.char.skill_16 = str(text)
     def onSkill1LVLTextChanged(self, text):
-        self.skill_1_lvl = int(text)
+        self.char.skill_1_lvl = int(text)
     def onSkill2LVLTextChanged(self, text):
-        self.skill_2_lvl = int(text)
+        self.char.skill_2_lvl = int(text)
     def onSkill3LVLTextChanged(self, text):
-        self.skill_3_lvl = int(text)
+        self.char.skill_3_lvl = int(text)
     def onSkill4LVLTextChanged(self, text):
-        self.skill_4_lvl = int(text)
+        self.char.skill_4_lvl = int(text)
     def onSkill5LVLTextChanged(self, text):
-        self.skill_5_lvl = int(text)
+        self.char.skill_5_lvl = int(text)
     def onSkill6LVLTextChanged(self, text):
-        self.skill_6_lvl = int(text)
+        self.char.skill_6_lvl = int(text)
     def onSkill7LVLTextChanged(self, text):
-        self.skill_7_lvl = int(text)
+        self.char.skill_7_lvl = int(text)
     def onSkill8LVLTextChanged(self, text):
-        self.skill_8_lvl = int(text)
+        self.char.skill_8_lvl = int(text)
     def onSkill9LVLTextChanged(self, text):
-        self.skill_9_lvl = int(text)
+        self.char.skill_9_lvl = int(text)
     def onSkill10LVLTextChanged(self, text):
-        self.skill_10_lvl = int(text)
+        self.char.skill_10_lvl = int(text)
     def onSkill11LVLTextChanged(self, text):
-        self.skill_11_lvl = int(text)
+        self.char.skill_11_lvl = int(text)
     def onSkill12LVLTextChanged(self, text):
-        self.skill_12_lvl = int(text)
+        self.char.skill_12_lvl = int(text)
     def onSkill13LVLTextChanged(self, text):
-        self.skill_13_lvl = int(text)
+        self.char.skill_13_lvl = int(text)
     def onSkill14LVLTextChanged(self, text):
-        self.skill_14_lvl = int(text)
+        self.char.skill_14_lvl = int(text)
     def onSkill15LVLTextChanged(self, text):
-        self.skill_15_lvl = int(text)
+        self.char.skill_15_lvl = int(text)
     def onSkill16LVLTextChanged(self, text):
-        self.skill_16_lvl = int(text)
+        self.char.skill_16_lvl = int(text)
     #perks
     def onPerk1Activated(self, text):
         self.char.perk_1 = str(text)
@@ -471,37 +474,37 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def onPerk16Activated(self, text):
         self.char.perk_16 = str(text)
     def onPerk1LVLTextChanged(self, text):
-        self.perk_1_lvl = int(text)
+        self.char.perk_1_lvl = int(text)
     def onPerk2LVLTextChanged(self, text):
-        self.perk_2_lvl = int(text)
+        self.char.perk_2_lvl = int(text)
     def onPerk3LVLTextChanged(self, text):
-        self.perk_3_lvl = int(text)
+        self.char.perk_3_lvl = int(text)
     def onPerk4LVLTextChanged(self, text):
-        self.perk_4_lvl = int(text)
+        self.char.perk_4_lvl = int(text)
     def onPerk5LVLTextChanged(self, text):
-        self.perk_5_lvl = int(text)
+        self.char.perk_5_lvl = int(text)
     def onPerk6LVLTextChanged(self, text):
-        self.perk_6_lvl = int(text)
+        self.char.perk_6_lvl = int(text)
     def onPerk7LVLTextChanged(self, text):
-        self.perk_7_lvl = int(text)
+        self.char.perk_7_lvl = int(text)
     def onPerk8LVLTextChanged(self, text):
-        self.perk_8_lvl = int(text)
+        self.char.perk_8_lvl = int(text)
     def onPerk9LVLTextChanged(self, text):
-        self.perk_9_lvl = int(text)
+        self.char.perk_9_lvl = int(text)
     def onPerk10LVLTextChanged(self, text):
-        self.perk_10_lvl = int(text)
+        self.char.perk_10_lvl = int(text)
     def onPerk11LVLTextChanged(self, text):
-        self.perk_11_lvl = int(text)
+        self.char.perk_11_lvl = int(text)
     def onPerk12LVLTextChanged(self, text):
-        self.perk_12_lvl = int(text)
+        self.char.perk_12_lvl = int(text)
     def onPerk13LVLTextChanged(self, text):
-        self.perk_13_lvl = int(text)
+        self.char.perk_13_lvl = int(text)
     def onPerk14LVLTextChanged(self, text):
-        self.perk_14_lvl = int(text)
+        self.char.perk_14_lvl = int(text)
     def onPerk15LVLTextChanged(self, text):
-        self.perk_15_lvl = int(text)
+        self.char.perk_15_lvl = int(text)
     def onPerk16LVLTextChanged(self, text):
-        self.perk_16_lvl = int(text)
+        self.char.perk_16_lvl = int(text)
 
     def onIntTextChanged(self, text):
         print 'onIntTextChanged', text
@@ -556,6 +559,25 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def update_all_derived_fields(self):
         # key skills
         self.lineEditName.setText(str(self.char.name))
+        self.lineEditReputation.setText(str(self.char.reputation))
+        self.lineEditIP.setText(str(self.char.ip))
+        self.lineEditLifepath.setText(str(self.char.lifepath))
+        self.lineEditTraits.setText(str(self.char.traits))
+        self.lineEditFeelAboutPeople.setText(str(self.char.feel_about_people))
+        self.lineEditYouValueMost.setText(str(self.char.you_value_most))
+        self.lineEditValuedPerson.setText(str(self.char.valued_person))
+        self.lineEditValuedPossesion.setText(str(self.char.valued_possesion))
+        self.lineEditClothes.setText(str(self.char.clothes))
+        self.lineEditHair.setText(str(self.char.hair))
+        self.lineEditAffectations.setText(str(self.char.affectations))
+        self.lineEditOrigins.setText(str(self.char.origins))
+        self.lineEditLanguages.setText(str(self.char.languages))
+        self.plainTextEditBackground.setPlainText(str(self.char.background))
+        #outfit
+        self.plainTextEditOutfit.setPlainText(str(self.char.outfit))
+        #weapons
+        self.plainTextEditWeapons.setPlainText(str(self.char.weapons))
+        #stats
         self.lineEditInt.setText(str(self.char.intelligence))
         self.lineEditRef.setText(str(self.char.reflex))
         self.lineEditTech.setText(str(self.char.technology))
@@ -566,46 +588,92 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.lineEditCon.setText(str(self.char.constitution))
         self.lineEditMove.setText(str(self.char.move))
         self.lineEditBody.setText(str(self.char.body))
-
         self.char.luck = self.char.intelligence + self.char.reflex / 2
         self.lineROLuck.setText(str(self.char.luck))
-        print str(self.char.luck)
-        #humanity
         self.char.humanity = self.char.will * 10
         self.lineROHum.setText(str(self.char.humanity))
-        print str(self.char.humanity)
-        #recovery
         self.char.recovery = self.char.strength + self.char.constitution / 2
         self.lineRORec.setText(str(self.char.recovery))
-        print str(self.char.recovery)
-        #endurance
         self.char.endurance = self.char.constitution * 2
         self.lineROEnd.setText(str(self.char.endurance))
-        print str(self.char.endurance)
-        #run
         self.char.run = self.char.move * 2
         self.lineRORun.setText(str(self.char.run))
-        print str(self.char.run)
-        #sprint
         self.char.sprint = self.char.move * 3
         self.lineROSpr.setText(str(self.char.sprint))
-        print str(self.char.sprint)
-        #swim
         self.char.swim = self.char.move
         self.lineROSwim.setText(str(self.char.swim))
-        print str(self.char.swim)
-        #leap
         self.char.leap = self.char.move
         self.lineROLeap.setText(str(self.char.leap))
-        print str(self.char.leap)
-        #hits
         self.char.hits = self.char.body * 2
         self.lineROHits.setText(str(self.char.hits))
-        print str(self.char.hits)
-        #stun
         self.char.stun = self.char.body * 5
         self.lineROStun.setText(str(self.char.stun))
-        print str(self.char.stun)
+        # skills
+        self.cb_skill_1.setCurrentIndex(self.cb_skill_1.findText(self.char.skill_1))
+        self.cb_skill_2.setCurrentIndex(self.cb_skill_2.findText(self.char.skill_2))
+        self.cb_skill_3.setCurrentIndex(self.cb_skill_3.findText(self.char.skill_3))
+        self.cb_skill_4.setCurrentIndex(self.cb_skill_4.findText(self.char.skill_4))
+        self.cb_skill_5.setCurrentIndex(self.cb_skill_5.findText(self.char.skill_5))
+        self.cb_skill_6.setCurrentIndex(self.cb_skill_6.findText(self.char.skill_6))
+        self.cb_skill_7.setCurrentIndex(self.cb_skill_7.findText(self.char.skill_7))
+        self.cb_skill_8.setCurrentIndex(self.cb_skill_8.findText(self.char.skill_8))
+        self.cb_skill_9.setCurrentIndex(self.cb_skill_9.findText(self.char.skill_9))
+        self.cb_skill_10.setCurrentIndex(self.cb_skill_10.findText(self.char.skill_10))
+        self.cb_skill_11.setCurrentIndex(self.cb_skill_11.findText(self.char.skill_11))
+        self.cb_skill_12.setCurrentIndex(self.cb_skill_12.findText(self.char.skill_12))
+        self.cb_skill_13.setCurrentIndex(self.cb_skill_13.findText(self.char.skill_13))
+        self.cb_skill_14.setCurrentIndex(self.cb_skill_14.findText(self.char.skill_14))
+        self.cb_skill_15.setCurrentIndex(self.cb_skill_15.findText(self.char.skill_15))
+        self.cb_skill_16.setCurrentIndex(self.cb_skill_16.findText(self.char.skill_16))
+        self.le_skill_1_lvl.setText(str(self.char.skill_1_lvl))
+        self.le_skill_2_lvl.setText(str(self.char.skill_2_lvl))
+        self.le_skill_3_lvl.setText(str(self.char.skill_3_lvl))
+        self.le_skill_4_lvl.setText(str(self.char.skill_4_lvl))
+        self.le_skill_5_lvl.setText(str(self.char.skill_5_lvl))
+        self.le_skill_6_lvl.setText(str(self.char.skill_6_lvl))
+        self.le_skill_7_lvl.setText(str(self.char.skill_7_lvl))
+        self.le_skill_8_lvl.setText(str(self.char.skill_8_lvl))
+        self.le_skill_9_lvl.setText(str(self.char.skill_9_lvl))
+        self.le_skill_10_lvl.setText(str(self.char.skill_10_lvl))
+        self.le_skill_11_lvl.setText(str(self.char.skill_11_lvl))
+        self.le_skill_12_lvl.setText(str(self.char.skill_12_lvl))
+        self.le_skill_13_lvl.setText(str(self.char.skill_13_lvl))
+        self.le_skill_14_lvl.setText(str(self.char.skill_14_lvl))
+        self.le_skill_15_lvl.setText(str(self.char.skill_15_lvl))
+        self.le_skill_16_lvl.setText(str(self.char.skill_16_lvl))
+        #perks
+        self.cb_perk_1.setCurrentIndex(self.cb_perk_1.findText(self.char.perk_1))
+        self.cb_perk_2.setCurrentIndex(self.cb_perk_2.findText(self.char.perk_2))
+        self.cb_perk_3.setCurrentIndex(self.cb_perk_3.findText(self.char.perk_3))
+        self.cb_perk_4.setCurrentIndex(self.cb_perk_4.findText(self.char.perk_4))
+        self.cb_perk_5.setCurrentIndex(self.cb_perk_5.findText(self.char.perk_5))
+        self.cb_perk_6.setCurrentIndex(self.cb_perk_6.findText(self.char.perk_6))
+        self.cb_perk_7.setCurrentIndex(self.cb_perk_7.findText(self.char.perk_7))
+        self.cb_perk_8.setCurrentIndex(self.cb_perk_8.findText(self.char.perk_8))
+        self.cb_perk_9.setCurrentIndex(self.cb_perk_9.findText(self.char.perk_9))
+        self.cb_perk_10.setCurrentIndex(self.cb_perk_10.findText(self.char.perk_10))
+        self.cb_perk_11.setCurrentIndex(self.cb_perk_11.findText(self.char.perk_11))
+        self.cb_perk_12.setCurrentIndex(self.cb_perk_12.findText(self.char.perk_12))
+        self.cb_perk_13.setCurrentIndex(self.cb_perk_13.findText(self.char.perk_13))
+        self.cb_perk_14.setCurrentIndex(self.cb_perk_14.findText(self.char.perk_14))
+        self.cb_perk_15.setCurrentIndex(self.cb_perk_15.findText(self.char.perk_15))
+        self.cb_perk_16.setCurrentIndex(self.cb_perk_16.findText(self.char.perk_16))
+        self.le_perk_1_lvl.setText(str(self.char.perk_1_lvl))
+        self.le_perk_2_lvl.setText(str(self.char.perk_2_lvl))
+        self.le_perk_3_lvl.setText(str(self.char.perk_3_lvl))
+        self.le_perk_4_lvl.setText(str(self.char.perk_4_lvl))
+        self.le_perk_5_lvl.setText(str(self.char.perk_5_lvl))
+        self.le_perk_6_lvl.setText(str(self.char.perk_6_lvl))
+        self.le_perk_7_lvl.setText(str(self.char.perk_7_lvl))
+        self.le_perk_8_lvl.setText(str(self.char.perk_8_lvl))
+        self.le_perk_9_lvl.setText(str(self.char.perk_9_lvl))
+        self.le_perk_10_lvl.setText(str(self.char.perk_10_lvl))
+        self.le_perk_11_lvl.setText(str(self.char.perk_11_lvl))
+        self.le_perk_12_lvl.setText(str(self.char.perk_12_lvl))
+        self.le_perk_13_lvl.setText(str(self.char.perk_13_lvl))
+        self.le_perk_14_lvl.setText(str(self.char.perk_14_lvl))
+        self.le_perk_15_lvl.setText(str(self.char.perk_15_lvl))
+        self.le_perk_16_lvl.setText(str(self.char.perk_16_lvl))
 
 def convert_html_to_pdf(source, output):
     output_file = open(output, "w+b")

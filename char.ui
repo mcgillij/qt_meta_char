@@ -181,7 +181,11 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QLineEdit" name="lineEditReputation"/>
+               <widget class="QLineEdit" name="lineEditReputation">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
               </item>
               <item row="2" column="0">
                <widget class="QLabel" name="label_19">
@@ -191,7 +195,11 @@
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QLineEdit" name="lineEditIP"/>
+               <widget class="QLineEdit" name="lineEditIP">
+                <property name="text">
+                 <string>0</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -233,14 +241,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <widget class="QPushButton" name="pushButtonRandomStats">
-             <property name="text">
-              <string>Random Stats</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QGroupBox" name="">
+            <widget class="QGroupBox" name="groupBox">
              <layout class="QGridLayout" name="gridLayout_2">
               <item row="2" column="4">
                <widget class="QLabel" name="label_23">
@@ -881,7 +882,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLineEdit" name="skill_1_lvl">
+                 <widget class="QLineEdit" name="le_skill_1_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -900,7 +901,7 @@
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="skill_2_lvl">
+                 <widget class="QLineEdit" name="le_skill_2_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -919,7 +920,7 @@
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="skill_3_lvl">
+                 <widget class="QLineEdit" name="le_skill_3_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -938,7 +939,7 @@
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="skill_4_lvl">
+                 <widget class="QLineEdit" name="le_skill_4_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -957,7 +958,7 @@
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QLineEdit" name="skill_5_lvl">
+                 <widget class="QLineEdit" name="le_skill_5_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -976,7 +977,7 @@
                  </widget>
                 </item>
                 <item row="6" column="1">
-                 <widget class="QLineEdit" name="skill_6_lvl">
+                 <widget class="QLineEdit" name="le_skill_6_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -995,7 +996,7 @@
                  </widget>
                 </item>
                 <item row="7" column="1">
-                 <widget class="QLineEdit" name="skill_7_lvl">
+                 <widget class="QLineEdit" name="le_skill_7_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1014,7 +1015,7 @@
                  </widget>
                 </item>
                 <item row="8" column="1">
-                 <widget class="QLineEdit" name="skill_8_lvl">
+                 <widget class="QLineEdit" name="le_skill_8_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1033,7 +1034,7 @@
                  </widget>
                 </item>
                 <item row="9" column="1">
-                 <widget class="QLineEdit" name="skill_9_lvl">
+                 <widget class="QLineEdit" name="le_skill_9_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1052,7 +1053,7 @@
                  </widget>
                 </item>
                 <item row="10" column="1">
-                 <widget class="QLineEdit" name="skill_10_lvl">
+                 <widget class="QLineEdit" name="le_skill_10_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1071,7 +1072,7 @@
                  </widget>
                 </item>
                 <item row="11" column="1">
-                 <widget class="QLineEdit" name="skill_11_lvl">
+                 <widget class="QLineEdit" name="le_skill_11_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1090,7 +1091,7 @@
                  </widget>
                 </item>
                 <item row="12" column="1">
-                 <widget class="QLineEdit" name="skill_12_lvl">
+                 <widget class="QLineEdit" name="le_skill_12_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1109,7 +1110,7 @@
                  </widget>
                 </item>
                 <item row="13" column="1">
-                 <widget class="QLineEdit" name="skill_13_lvl">
+                 <widget class="QLineEdit" name="le_skill_13_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1128,7 +1129,7 @@
                  </widget>
                 </item>
                 <item row="14" column="1">
-                 <widget class="QLineEdit" name="skill_14_lvl">
+                 <widget class="QLineEdit" name="le_skill_14_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1147,7 +1148,7 @@
                  </widget>
                 </item>
                 <item row="15" column="1">
-                 <widget class="QLineEdit" name="skill_15_lvl">
+                 <widget class="QLineEdit" name="le_skill_15_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -1166,7 +1167,7 @@
                  </widget>
                 </item>
                 <item row="16" column="1">
-                 <widget class="QLineEdit" name="skill_16_lvl">
+                 <widget class="QLineEdit" name="le_skill_16_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9670,7 +9671,7 @@
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="perk_1_lvl">
+                 <widget class="QLineEdit" name="le_perk_1_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9689,7 +9690,7 @@
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="perk_2_lvl">
+                 <widget class="QLineEdit" name="le_perk_2_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9708,7 +9709,7 @@
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="perk_3_lvl">
+                 <widget class="QLineEdit" name="le_perk_3_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9727,7 +9728,7 @@
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QLineEdit" name="perk_4_lvl">
+                 <widget class="QLineEdit" name="le_perk_4_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9746,7 +9747,7 @@
                  </widget>
                 </item>
                 <item row="6" column="1">
-                 <widget class="QLineEdit" name="perk_5_lvl">
+                 <widget class="QLineEdit" name="le_perk_5_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9765,7 +9766,7 @@
                  </widget>
                 </item>
                 <item row="7" column="1">
-                 <widget class="QLineEdit" name="perk_6_lvl">
+                 <widget class="QLineEdit" name="le_perk_6_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9784,7 +9785,7 @@
                  </widget>
                 </item>
                 <item row="8" column="1">
-                 <widget class="QLineEdit" name="perk_7_lvl">
+                 <widget class="QLineEdit" name="le_perk_7_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9803,7 +9804,7 @@
                  </widget>
                 </item>
                 <item row="9" column="1">
-                 <widget class="QLineEdit" name="perk_8_lvl">
+                 <widget class="QLineEdit" name="le_perk_8_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9822,7 +9823,7 @@
                  </widget>
                 </item>
                 <item row="10" column="1">
-                 <widget class="QLineEdit" name="perk_9_lvl">
+                 <widget class="QLineEdit" name="le_perk_9_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9841,7 +9842,7 @@
                  </widget>
                 </item>
                 <item row="11" column="1">
-                 <widget class="QLineEdit" name="perk_10_lvl">
+                 <widget class="QLineEdit" name="le_perk_10_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9860,7 +9861,7 @@
                  </widget>
                 </item>
                 <item row="12" column="1">
-                 <widget class="QLineEdit" name="perk_11_lvl">
+                 <widget class="QLineEdit" name="le_perk_11_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9879,7 +9880,7 @@
                  </widget>
                 </item>
                 <item row="13" column="1">
-                 <widget class="QLineEdit" name="perk_12_lvl">
+                 <widget class="QLineEdit" name="le_perk_12_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9898,7 +9899,7 @@
                  </widget>
                 </item>
                 <item row="14" column="1">
-                 <widget class="QLineEdit" name="perk_13_lvl">
+                 <widget class="QLineEdit" name="le_perk_13_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9917,7 +9918,7 @@
                  </widget>
                 </item>
                 <item row="15" column="1">
-                 <widget class="QLineEdit" name="perk_14_lvl">
+                 <widget class="QLineEdit" name="le_perk_14_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9936,7 +9937,7 @@
                  </widget>
                 </item>
                 <item row="16" column="1">
-                 <widget class="QLineEdit" name="perk_15_lvl">
+                 <widget class="QLineEdit" name="le_perk_15_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
@@ -9955,7 +9956,7 @@
                  </widget>
                 </item>
                 <item row="17" column="1">
-                 <widget class="QLineEdit" name="perk_16_lvl">
+                 <widget class="QLineEdit" name="le_perk_16_lvl">
                   <property name="minimumSize">
                    <size>
                     <width>35</width>
