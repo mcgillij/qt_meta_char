@@ -43,124 +43,124 @@
               <property name="fieldGrowthPolicy">
                <enum>QFormLayout::ExpandingFieldsGrow</enum>
               </property>
-              <item row="3" column="0">
+              <item row="5" column="0">
                <widget class="QLabel" name="label_3">
                 <property name="text">
                  <string>Lifepath:</string>
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="5" column="1">
                <widget class="QLineEdit" name="lineEditLifepath"/>
               </item>
-              <item row="5" column="0">
+              <item row="7" column="0">
                <widget class="QLabel" name="label_5">
                 <property name="text">
                  <string>Traits:</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="7" column="1">
                <widget class="QLineEdit" name="lineEditTraits"/>
               </item>
-              <item row="6" column="0">
+              <item row="8" column="0">
                <widget class="QLabel" name="label_6">
                 <property name="text">
                  <string>Feel About People:</string>
                 </property>
                </widget>
               </item>
-              <item row="7" column="0">
+              <item row="9" column="0">
                <widget class="QLabel" name="label_7">
                 <property name="text">
                  <string>You Value Most:</string>
                 </property>
                </widget>
               </item>
-              <item row="8" column="0">
+              <item row="10" column="0">
                <widget class="QLabel" name="label_8">
                 <property name="text">
                  <string>Valued Person:</string>
                 </property>
                </widget>
               </item>
-              <item row="9" column="0">
+              <item row="11" column="0">
                <widget class="QLabel" name="label_9">
                 <property name="text">
                  <string>Valued Possesion:</string>
                 </property>
                </widget>
               </item>
-              <item row="11" column="0">
+              <item row="13" column="0">
                <widget class="QLabel" name="label_4">
                 <property name="text">
                  <string>Clothes:</string>
                 </property>
                </widget>
               </item>
-              <item row="12" column="0">
+              <item row="14" column="0">
                <widget class="QLabel" name="label_10">
                 <property name="text">
                  <string>Hair:</string>
                 </property>
                </widget>
               </item>
-              <item row="13" column="0">
+              <item row="15" column="0">
                <widget class="QLabel" name="label_11">
                 <property name="text">
                  <string>Affectations:</string>
                 </property>
                </widget>
               </item>
-              <item row="14" column="0">
+              <item row="16" column="0">
                <widget class="QLabel" name="label_12">
                 <property name="text">
                  <string>Origins:</string>
                 </property>
                </widget>
               </item>
-              <item row="15" column="0">
+              <item row="17" column="0">
                <widget class="QLabel" name="label_13">
                 <property name="text">
                  <string>Languages:</string>
                 </property>
                </widget>
               </item>
-              <item row="16" column="0">
+              <item row="18" column="0">
                <widget class="QLabel" name="label_14">
                 <property name="text">
                  <string>Background:</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="1">
+              <item row="8" column="1">
                <widget class="QLineEdit" name="lineEditFeelAboutPeople"/>
               </item>
-              <item row="7" column="1">
+              <item row="9" column="1">
                <widget class="QLineEdit" name="lineEditYouValueMost"/>
               </item>
-              <item row="8" column="1">
+              <item row="10" column="1">
                <widget class="QLineEdit" name="lineEditValuedPerson"/>
               </item>
-              <item row="11" column="1">
+              <item row="13" column="1">
                <widget class="QLineEdit" name="lineEditClothes"/>
               </item>
-              <item row="9" column="1">
+              <item row="11" column="1">
                <widget class="QLineEdit" name="lineEditValuedPossesion"/>
               </item>
-              <item row="12" column="1">
+              <item row="14" column="1">
                <widget class="QLineEdit" name="lineEditHair"/>
               </item>
-              <item row="13" column="1">
+              <item row="15" column="1">
                <widget class="QLineEdit" name="lineEditAffectations"/>
               </item>
-              <item row="14" column="1">
+              <item row="16" column="1">
                <widget class="QLineEdit" name="lineEditOrigins"/>
               </item>
-              <item row="15" column="1">
+              <item row="17" column="1">
                <widget class="QLineEdit" name="lineEditLanguages"/>
               </item>
-              <item row="16" column="1">
+              <item row="18" column="1">
                <widget class="QPlainTextEdit" name="plainTextEditBackground"/>
               </item>
               <item row="0" column="0">
@@ -200,6 +200,26 @@
                  <string>0</string>
                 </property>
                </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_20">
+                <property name="text">
+                 <string>Age:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="lineEditAge"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_22">
+                <property name="text">
+                 <string>Sex:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="lineEditSex"/>
               </item>
              </layout>
             </widget>

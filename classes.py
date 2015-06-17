@@ -5,6 +5,8 @@ class Char:
     def __init__(self):
         self.image_path = ""
         self.name = ""
+        self.age = 0
+        self.sex = ""
         self.reputation = 0
         self.ip = 0
         self.lifepath = ""

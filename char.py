@@ -88,7 +88,9 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         #shortcuts
         c = self.char
         my_dict = dict(
-                name=c.char.name,
+                name=c.name,
+                age=c.age,
+                sex=c.sex,
                 image_path = c.image_path,
                 reputation = c.reputation,
                 ip = c.ip,
@@ -227,6 +229,12 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def onNameTextChanged(self, text):
         print text
         self.char.name = str(text)
+    def onAgeTextChanged(self, text):
+        print text
+        self.char.age = int(text)
+    def onSexTextChanged(self, text):
+        print text
+        self.char.sex = str(text)
     def onReputationTextChanged(self, text):
         print text
         self.char.reputation= int(text)
@@ -284,6 +292,8 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     def init_ui(self):
         self.pushButtonChooseImage.clicked.connect(self.showChooseImageDialog)
         self.lineEditName.textChanged.connect(self.onNameTextChanged)
+        self.lineEditAge.textChanged.connect(self.onAgeTextChanged)
+        self.lineEditSex.textChanged.connect(self.onSexTextChanged)
         self.lineEditReputation.textChanged.connect(self.onReputationTextChanged)
         self.lineEditIP.textChanged.connect(self.onIPTextChanged)
         self.lineEditLifepath.textChanged.connect(self.onLifepathTextChanged)
@@ -563,6 +573,8 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
 
     def update_all_derived_fields(self):
         self.lineEditName.setText(str(self.char.name))
+        self.lineEditAge.setText(str(self.char.age))
+        self.lineEditSex.setText(str(self.char.sex))
         self.lineEditReputation.setText(str(self.char.reputation))
         self.lineEditIP.setText(str(self.char.ip))
         self.lineROImagePath.setText(str(self.char.image_path))
