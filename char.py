@@ -1,7 +1,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 import sys
-from pprint import pprint
 import char_window
 from classes import Char
 from xhtml2pdf import pisa
@@ -64,7 +63,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
             output = open(filename, 'w')
             output.write(str(s))
             output.close()
-            print file(filename).read()
+            #print file(filename).read()
 
     def export_to_pdf(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to PDF', "*.pdf")
@@ -192,7 +191,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
     #diag windows
     def showOpenDialog(self):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '/home')
-        print "opening", filename, "\n"
+        #print "opening", filename, "\n"
         if filename:
             char = self.char.load_from_disk(filename)
             self.char = char
@@ -204,12 +203,12 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
 
     def showSaveDialog(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Save File', "*")
-        print "saving", filename, "\n"
+        #print "saving", filename, "\n"
         if filename:
             self.char.save_to_disk(filename)
     def showChooseImageDialog(self):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Choose Image', "*.png")
-        print "trying to load up", filename, "as an image \n"
+        #print "trying to load up", filename, "as an image \n"
         if filename:
             self.char.image_path = filename
             self.lineROImagePath.setText(str(filename))
@@ -219,64 +218,45 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
             self.graphicsView.show()
     # onChange events
     def onNameTextChanged(self, text):
-        print text
         self.char.name = str(text)
     def onAgeTextChanged(self, text):
-        print text
         self.char.age = int(text)
     def onSexTextChanged(self, text):
-        print text
         self.char.sex = str(text)
     def onReputationTextChanged(self, text):
-        print text
         self.char.reputation= int(text)
     def onIPTextChanged(self, text):
-        print text
         self.char.ip = int(text)
     def onLifepathTextChanged(self, text):
-        print text
         self.char.lifepath = str(text)
     def onTraitsTextChanged(self, text):
-        print text
         self.char.traits = str(text)
     def onFeelAboutPeopleTextChanged(self, text):
-        print text
         self.char.feel_about_people= str(text)
     def onYouValueMostTextChanged(self, text):
-        print text
         self.char.you_value_most= str(text)
     def onValuedPersonTextChanged(self, text):
-        print text
         self.char.valued_person = str(text)
     def onValuedPossesionTextChanged(self, text):
-        print text
         self.char.valued_possesion= str(text)
     def onClothesTextChanged(self, text):
-        print text
         self.char.clothes = str(text)
     def onHairTextChanged(self, text):
-        print text
         self.char.hair= str(text)
     def onAffectationsTextChanged(self, text):
-        print text
         self.char.affectations = str(text)
     def onOriginsTextChanged(self, text):
-        print text
         self.char.origins = str(text)
     def onLanguagesTextChanged(self, text):
-        print text
         self.char.languages= str(text)
     def onBackgroundTextChanged(self):
         text = self.plainTextEditBackground.toPlainText()
-        print text
         self.char.background = str(text)
     def onOutfitTextChanged(self):
         text = self.plainTextEditOutfit.toPlainText()
-        print text
         self.char.outfit= str(text)
     def onWeaponsTextChanged(self):
         text = self.plainTextEditWeapons.toPlainText()
-        print text
         self.char.weapons = str(text)
 
 
@@ -514,52 +494,52 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.char.perk_16_lvl = int(text)
 
     def onIntTextChanged(self, text):
-        print 'onIntTextChanged', text
+        #print 'onIntTextChanged', text
         self.char.intelligence = int(text)
         self.update_all_derived_fields()
 
     def onRefTextChanged(self, text):
-        print 'onRefTextChanged', text
+        #print 'onRefTextChanged', text
         self.char.reflex = int(text)
         self.update_all_derived_fields()
 
     def onTechTextChanged(self, text):
-        print 'onTechTextChanged', text
+        #print 'onTechTextChanged', text
         self.char.technology = int(text)
         self.update_all_derived_fields()
 
     def onDexTextChanged(self, text):
-        print 'onDexTextChanged', text
+        #print 'onDexTextChanged', text
         self.char.dexterity = int(text)
         self.update_all_derived_fields()
 
     def onCoolTextChanged(self, text):
-        print 'onCoolTextChanged', text
+        #print 'onCoolTextChanged', text
         self.char.cool = int(text)
         self.update_all_derived_fields()
 
     def onWillTextChanged(self, text):
-        print 'onWillTextChanged', text
+        #print 'onWillTextChanged', text
         self.char.will= int(text)
         self.update_all_derived_fields()
 
     def onStrTextChanged(self, text):
-        print 'onStrTextChanged', text
+        #print 'onStrTextChanged', text
         self.char.strength = int(text)
         self.update_all_derived_fields()
 
     def onConTextChanged(self, text):
-        print 'onConTextChanged', text
+        #print 'onConTextChanged', text
         self.char.constitution = int(text)
         self.update_all_derived_fields()
 
     def onMoveTextChanged(self, text):
-        print 'onMoveTextChanged', text
+        #print 'onMoveTextChanged', text
         self.char.move = int(text)
         self.update_all_derived_fields()
 
     def onBodyTextChanged(self, text):
-        print 'onBodyTextChanged', text
+        #print 'onBodyTextChanged', text
         self.char.body = int(text)
         self.update_all_derived_fields()
 

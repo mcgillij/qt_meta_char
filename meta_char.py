@@ -1,7 +1,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 import sys
-from pprint import pprint
 import meta_char_window
 from classes import MetaChar, Brain, RightHand, LeftHand
 from xhtml2pdf import pisa
@@ -42,16 +41,11 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         export_pdf_action.setShortcut('Ctrl+p')
         export_pdf_action.setStatusTip('Export to PDF')
         export_pdf_action.triggered.connect(self.export_to_pdf)
-        #test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
-        #test_action.setShortcut('Ctrl+T')
-        #test_action.setStatusTip('TestAction')
-        #test_action.triggered.connect(self.showTestDialog)
         menubar = self.menuBar()
 
         file_menu = menubar.addMenu('&File')
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
-        #file_menu.addAction(test_action)
         file_menu.addAction(export_html_action)
         file_menu.addAction(export_pdf_action)
         file_menu.addAction(exit_action)
@@ -70,7 +64,7 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
             output = open(filename, 'w')
             output.write(str(s))
             output.close()
-            print file(filename).read()
+            #print file(filename).read()
 
     def export_to_pdf(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to PDF', "*.pdf")
@@ -198,12 +192,9 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
                 )
         return my_dict
 
-    def showTestDialog(self):
-        print "From Test Action:", self.meta_char.name, self.meta_char.history, "brain: ", self.meta_char.brain.intelligence
-
     def showOpenDialog(self):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '/home')
-        print "opening", filename, "\n"
+        #print "opening", filename, "\n"
         if filename:
             meta_char = self.meta_char.load_from_disk(filename)
             self.meta_char = meta_char
@@ -215,7 +206,7 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
 
     def showSaveDialog(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Save File', "*")
-        print "saving", filename, "\n"
+        #print "saving", filename, "\n"
         if filename:
             self.meta_char.save_to_disk(filename)
 
@@ -306,167 +297,139 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         self.plainTextEditBodyVehicles.setPlainText(str(self.meta_char.body.vehicles))
     # body related events
     def onBodyLeadersTextChanged(self, text):
-        print 'onBodyLeadersTextChanged', text
+        #print 'onBodyLeadersTextChanged', text
         self.meta_char.body.leaders = str(text)
-        print self.meta_char.body.leaders
-        pass
+        #print self.meta_char.body.leaders
     def onBodySoldiersTextChanged(self, text):
-        print 'onBodySoldiersTextChanged', text
+        #print 'onBodySoldiersTextChanged', text
         self.meta_char.body.soldiers = str(text)
-        print self.meta_char.body.soldiers
-        pass
+        #print self.meta_char.body.soldiers
     def onBodyGruntsTextChanged(self, text):
-        print 'onBodyGruntsTextChanged', text
+        #print 'onBodyGruntsTextChanged', text
         self.meta_char.body.grunts = str(text)
-        print self.meta_char.body.grunts
-        pass
+        #print self.meta_char.body.grunts
     def onBodyAssetsTextChanged(self):
         text = self.plainTextEditBodyAssets.toPlainText()
-        print 'onBodyAssetsTextChanged', text
+        #print 'onBodyAssetsTextChanged', text
         self.meta_char.body.assets = str(text)
-        print self.meta_char.body.assets
-        pass
+        #print self.meta_char.body.assets
     def onBodyVehiclesTextChanged(self):
         text = self.plainTextEditBodyVehicles.toPlainText()
-        print 'onBodyVehiclesTextChanged', text
+        #print 'onBodyVehiclesTextChanged', text
         self.meta_char.body.vehicles= str(text)
-        print self.meta_char.body.vehicles
-        pass
+        #print self.meta_char.body.vehicles
 
     # meta_char base level attributes
     def onMCNameTextChanged(self, text):
-        print 'onMCNameTextChanged', text
+        #print 'onMCNameTextChanged', text
         self.meta_char.name = str(text)
-        print self.meta_char.name
-        pass
+        #print self.meta_char.name
     def onMCHistoryTextChanged(self):
         text = self.plainTextEditHistory.toPlainText()
-        print 'onMCHistoryTextChanged', text
+        #print 'onMCHistoryTextChanged', text
         self.meta_char.history = str(text)
-        print self.meta_char.history
-        pass
+        #print self.meta_char.history
     # brain page related functions
     def onBrainGoalsTextChanged(self):
         text = self.plainTextEditBrainGoals.toPlainText()
-        print 'onBrainGoalsTextChanged', text
+        #print 'onBrainGoalsTextChanged', text
         self.meta_char.brain.goals = str(text)
-        print self.meta_char.brain.goals
-        pass
+        #print self.meta_char.brain.goals
     def onBrainLPTextChanged(self):
         text = self.plainTextEditBrainLP.toPlainText()
-        print 'onBrainLPTextChanged', text
+        #print 'onBrainLPTextChanged', text
         self.meta_char.brain.lifepath = str(text)
-        print self.meta_char.brain.lifepath
-        pass
+        #print self.meta_char.brain.lifepath
     def onBrainKSOneTextChanged(self, text):
-        print 'onBrainKSOneTextChanged', text
+        #print 'onBrainKSOneTextChanged', text
         self.meta_char.brain.key_skill_1 = str(text)
-        print self.meta_char.brain.key_skill_1
-        pass
+        #print self.meta_char.brain.key_skill_1
 
     def onBrainKSOneLVLTextChanged(self, text):
-        print 'onBrainKSOneLVLTextChanged', text
+        #print 'onBrainKSOneLVLTextChanged', text
         self.meta_char.brain.key_skill_1_lvl = int(text)
-        print self.meta_char.brain.key_skill_1_lvl
-        pass
+        #print self.meta_char.brain.key_skill_1_lvl
     def onBrainKSTwoTextChanged(self, text):
-        print 'onBrainKSTwoTextChanged', text
+        #print 'onBrainKSTwoTextChanged', text
         self.meta_char.brain.key_skill_2 = str(text)
-        print self.meta_char.brain.key_skill_2
-        pass
+        #print self.meta_char.brain.key_skill_2
 
     def onBrainKSTwoLVLTextChanged(self, text):
-        print 'onBrainKSTwoLVLTextChanged', text
+        #print 'onBrainKSTwoLVLTextChanged', text
         self.meta_char.brain.key_skill_2_lvl = int(text)
-        print self.meta_char.brain.key_skill_2_lvl
-        pass
+        #print self.meta_char.brain.key_skill_2_lvl
     def onBrainKPOneTextChanged(self, text):
-        print 'onBrainKPOneTextChanged', text
+        #print 'onBrainKPOneTextChanged', text
         self.meta_char.brain.key_perk_1 = str(text)
-        print self.meta_char.brain.key_perk_1
-        pass
+        #print self.meta_char.brain.key_perk_1
 
     def onBrainKPOneLVLTextChanged(self, text):
-        print 'onBrainKPOneLVLTextChanged', text
+        #print 'onBrainKPOneLVLTextChanged', text
         self.meta_char.brain.key_perk_1_lvl = int(text)
-        print self.meta_char.brain.key_perk_1_lvl
-        pass
+        #print self.meta_char.brain.key_perk_1_lvl
     def onBrainKPTwoTextChanged(self, text):
-        print 'onBrainKPTwoTextChanged', text
+        #print 'onBrainKPTwoTextChanged', text
         self.meta_char.brain.key_perk_2 = str(text)
-        print self.meta_char.brain.key_perk_2
-        pass
+        #print self.meta_char.brain.key_perk_2
 
     def onBrainKPTwoLVLTextChanged(self, text):
-        print 'onBrainKPTwoLVLTextChanged', text
+        #print 'onBrainKPTwoLVLTextChanged', text
         self.meta_char.brain.key_perk_2_lvl = int(text)
-        print self.meta_char.brain.key_perk_2_lvl
-        pass
+        #print self.meta_char.brain.key_perk_2_lvl
 
     def onBrainIntTextChanged(self, text):
-        print 'onBrainIntTextChanged', text
+        #print 'onBrainIntTextChanged', text
         self.meta_char.brain.intelligence = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainRefTextChanged(self, text):
-        print 'onBrainRefTextChanged', text
+        #print 'onBrainRefTextChanged', text
         self.meta_char.brain.reflex = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainTechTextChanged(self, text):
-        print 'onBrainTechTextChanged', text
+        #print 'onBrainTechTextChanged', text
         self.meta_char.brain.technology = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainDexTextChanged(self, text):
-        print 'onBrainDexTextChanged', text
+        #print 'onBrainDexTextChanged', text
         self.meta_char.brain.dexterity = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainCoolTextChanged(self, text):
-        print 'onBrainCoolTextChanged', text
+        #print 'onBrainCoolTextChanged', text
         self.meta_char.brain.cool = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainWillTextChanged(self, text):
-        print 'onBrainWillTextChanged', text
+        #print 'onBrainWillTextChanged', text
         self.meta_char.brain.will= int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainStrTextChanged(self, text):
-        print 'onBrainStrTextChanged', text
+        #print 'onBrainStrTextChanged', text
         self.meta_char.brain.strength = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainConTextChanged(self, text):
-        print 'onBrainConTextChanged', text
+        #print 'onBrainConTextChanged', text
         self.meta_char.brain.constitution = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainMoveTextChanged(self, text):
-        print 'onBrainMoveTextChanged', text
+        #print 'onBrainMoveTextChanged', text
         self.meta_char.brain.move = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainBodyTextChanged(self, text):
-        print 'onBrainBodyTextChanged', text
+        #print 'onBrainBodyTextChanged', text
         self.meta_char.brain.body = int(text)
         self.update_all_brain_derived_fields()
-        pass
 
     def onBrainNameTextChanged(self, text):
-        print 'onBrainNameTextChanged', text
+        #print 'onBrainNameTextChanged', text
         self.meta_char.brain.name= str(text)
-        pass
 
     def update_all_mc_fields(self):
         self.lineEditName.setText(str(self.meta_char.name))
@@ -498,166 +461,144 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         #luck
         self.meta_char.brain.luck = self.meta_char.brain.intelligence + self.meta_char.brain.reflex / 2
         self.lineROBrainLuck.setText(str(self.meta_char.brain.luck))
-        print str(self.meta_char.brain.luck)
+        #print str(self.meta_char.brain.luck)
         #humanity
         self.meta_char.brain.humanity = self.meta_char.brain.will * 10
         self.lineROBrainHum.setText(str(self.meta_char.brain.humanity))
-        print str(self.meta_char.brain.humanity)
+        #print str(self.meta_char.brain.humanity)
         #recovery
         self.meta_char.brain.recovery = self.meta_char.brain.strength + self.meta_char.brain.constitution / 2
         self.lineROBrainRec.setText(str(self.meta_char.brain.recovery))
-        print str(self.meta_char.brain.recovery)
+        #print str(self.meta_char.brain.recovery)
         #endurance
         self.meta_char.brain.endurance = self.meta_char.brain.constitution * 2
         self.lineROBrainEnd.setText(str(self.meta_char.brain.endurance))
-        print str(self.meta_char.brain.endurance)
+        #print str(self.meta_char.brain.endurance)
         #run
         self.meta_char.brain.run = self.meta_char.brain.move * 2
         self.lineROBrainRun.setText(str(self.meta_char.brain.run))
-        print str(self.meta_char.brain.run)
+        #print str(self.meta_char.brain.run)
         #sprint
         self.meta_char.brain.sprint = self.meta_char.brain.move * 3
         self.lineROBrainSpr.setText(str(self.meta_char.brain.sprint))
-        print str(self.meta_char.brain.sprint)
+        #print str(self.meta_char.brain.sprint)
         #swim
         self.meta_char.brain.swim = self.meta_char.brain.move
         self.lineROBrainSwim.setText(str(self.meta_char.brain.swim))
-        print str(self.meta_char.brain.swim)
+        #print str(self.meta_char.brain.swim)
         #leap
         self.meta_char.brain.leap = self.meta_char.brain.move
         self.lineROBrainLeap.setText(str(self.meta_char.brain.leap))
-        print str(self.meta_char.brain.leap)
+        #print str(self.meta_char.brain.leap)
         #hits
         self.meta_char.brain.hits = self.meta_char.brain.body * 2
         self.lineROBrainHits.setText(str(self.meta_char.brain.hits))
-        print str(self.meta_char.brain.hits)
+        #print str(self.meta_char.brain.hits)
         #stun
         self.meta_char.brain.stun = self.meta_char.brain.body * 5
         self.lineROBrainStun.setText(str(self.meta_char.brain.stun))
-        print str(self.meta_char.brain.stun)
-        pass
+        #print str(self.meta_char.brain.stun)
 
     # right hand page related functions
     def onRHGoalsTextChanged(self):
         text = self.plainTextEditRHGoals.toPlainText()
-        print 'onRHGoalsTextChanged', text
+        #print 'onRHGoalsTextChanged', text
         self.meta_char.right_hand.goals = str(text)
-        print self.meta_char.right_hand.goals
-        pass
+        #print self.meta_char.right_hand.goals
     def onRHLPTextChanged(self):
         text = self.plainTextEditRHLP.toPlainText()
-        print 'onRHLPTextChanged', text
+        #print 'onRHLPTextChanged', text
         self.meta_char.right_hand.lifepath = str(text)
-        print self.meta_char.right_hand.lifepath
-        pass
+        #print self.meta_char.right_hand.lifepath
     def onRHKSOneTextChanged(self, text):
-        print 'onRHKSOneTextChanged', text
+        #print 'onRHKSOneTextChanged', text
         self.meta_char.right_hand.key_skill_1 = str(text)
-        print self.meta_char.right_hand.key_skill_1
-        pass
+        #print self.meta_char.right_hand.key_skill_1
 
     def onRHKSOneLVLTextChanged(self, text):
-        print 'onRHKSOneLVLTextChanged', text
+        #print 'onRHKSOneLVLTextChanged', text
         self.meta_char.right_hand.key_skill_1_lvl = int(text)
-        print self.meta_char.right_hand.key_skill_1_lvl
-        pass
+        #print self.meta_char.right_hand.key_skill_1_lvl
     def onRHKSTwoTextChanged(self, text):
-        print 'onRHKSTwoTextChanged', text
+        #print 'onRHKSTwoTextChanged', text
         self.meta_char.right_hand.key_skill_2 = str(text)
-        print self.meta_char.right_hand.key_skill_2
-        pass
+        #print self.meta_char.right_hand.key_skill_2
 
     def onRHKSTwoLVLTextChanged(self, text):
-        print 'onRHKSTwoLVLTextChanged', text
+        #print 'onRHKSTwoLVLTextChanged', text
         self.meta_char.right_hand.key_skill_2_lvl = int(text)
-        print self.meta_char.right_hand.key_skill_2_lvl
-        pass
+        #print self.meta_char.right_hand.key_skill_2_lvl
     def onRHKPOneTextChanged(self, text):
-        print 'onRHKPOneTextChanged', text
+        #print 'onRHKPOneTextChanged', text
         self.meta_char.right_hand.key_perk_1 = str(text)
-        print self.meta_char.right_hand.key_perk_1
-        pass
+        #print self.meta_char.right_hand.key_perk_1
 
     def onRHKPOneLVLTextChanged(self, text):
-        print 'onRHKPOneLVLTextChanged', text
+        #print 'onRHKPOneLVLTextChanged', text
         self.meta_char.right_hand.key_perk_1_lvl = int(text)
-        print self.meta_char.right_hand.key_perk_1_lvl
-        pass
+        #print self.meta_char.right_hand.key_perk_1_lvl
     def onRHKPTwoTextChanged(self, text):
-        print 'onRHKPTwoTextChanged', text
+        #print 'onRHKPTwoTextChanged', text
         self.meta_char.right_hand.key_perk_2 = str(text)
-        print self.meta_char.right_hand.key_perk_2
-        pass
+        #print self.meta_char.right_hand.key_perk_2
 
     def onRHKPTwoLVLTextChanged(self, text):
-        print 'onRHKPTwoLVLTextChanged', text
+        #print 'onRHKPTwoLVLTextChanged', text
         self.meta_char.right_hand.key_perk_2_lvl = int(text)
-        print self.meta_char.right_hand.key_perk_2_lvl
-        pass
+        #print self.meta_char.right_hand.key_perk_2_lvl
     def onRHIntTextChanged(self, text):
-        print 'onRHIntTextChanged', text
+        #print 'onRHIntTextChanged', text
         self.meta_char.right_hand.intelligence = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHRefTextChanged(self, text):
-        print 'onRHRefTextChanged', text
+        #print 'onRHRefTextChanged', text
         self.meta_char.right_hand.reflex = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHTechTextChanged(self, text):
-        print 'onRHTechTextChanged', text
+        #print 'onRHTechTextChanged', text
         self.meta_char.right_hand.technology = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHDexTextChanged(self, text):
-        print 'onRHDexTextChanged', text
+        #print 'onRHDexTextChanged', text
         self.meta_char.right_hand.dexterity = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHCoolTextChanged(self, text):
-        print 'onRHCoolTextChanged', text
+        #print 'onRHCoolTextChanged', text
         self.meta_char.right_hand.cool = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHWillTextChanged(self, text):
-        print 'onRHWillTextChanged', text
+        #print 'onRHWillTextChanged', text
         self.meta_char.right_hand.will= int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHStrTextChanged(self, text):
-        print 'onRHStrTextChanged', text
+        #print 'onRHStrTextChanged', text
         self.meta_char.right_hand.strength = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHConTextChanged(self, text):
-        print 'onRHConTextChanged', text
+        #print 'onRHConTextChanged', text
         self.meta_char.right_hand.constitution = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHMoveTextChanged(self, text):
-        print 'onRHMoveTextChanged', text
+        #print 'onRHMoveTextChanged', text
         self.meta_char.right_hand.move = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHBodyTextChanged(self, text):
-        print 'onRHBodyTextChanged', text
+        #print 'onRHBodyTextChanged', text
         self.meta_char.right_hand.body = int(text)
         self.update_all_right_hand_derived_fields()
-        pass
 
     def onRHNameTextChanged(self, text):
-        print 'onRHNameTextChanged', text
+        #print 'onRHNameTextChanged', text
         self.meta_char.right_hand.name= str(text)
-        pass
 
     def update_all_right_hand_derived_fields(self):
         # key skills
@@ -685,167 +626,145 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         #luck
         self.meta_char.right_hand.luck = self.meta_char.right_hand.intelligence + self.meta_char.right_hand.reflex / 2
         self.lineRORHLuck.setText(str(self.meta_char.right_hand.luck))
-        print str(self.meta_char.right_hand.luck)
+        #print str(self.meta_char.right_hand.luck)
         #humanity
         self.meta_char.right_hand.humanity = self.meta_char.right_hand.will * 10
         self.lineRORHHum.setText(str(self.meta_char.right_hand.humanity))
-        print str(self.meta_char.right_hand.humanity)
+        #print str(self.meta_char.right_hand.humanity)
         #recovery
         self.meta_char.right_hand.recovery = self.meta_char.right_hand.strength + self.meta_char.right_hand.constitution / 2
         self.lineRORHRec.setText(str(self.meta_char.right_hand.recovery))
-        print str(self.meta_char.right_hand.recovery)
+        #print str(self.meta_char.right_hand.recovery)
         #endurance
         self.meta_char.right_hand.endurance = self.meta_char.right_hand.constitution * 2
         self.lineRORHEnd.setText(str(self.meta_char.right_hand.endurance))
-        print str(self.meta_char.right_hand.endurance)
+        #print str(self.meta_char.right_hand.endurance)
         #run
         self.meta_char.right_hand.run = self.meta_char.right_hand.move * 2
         self.lineRORHRun.setText(str(self.meta_char.right_hand.run))
-        print str(self.meta_char.right_hand.run)
+        #print str(self.meta_char.right_hand.run)
         #sprint
         self.meta_char.right_hand.sprint = self.meta_char.right_hand.move * 3
         self.lineRORHSpr.setText(str(self.meta_char.right_hand.sprint))
-        print str(self.meta_char.right_hand.sprint)
+        #print str(self.meta_char.right_hand.sprint)
         #swim
         self.meta_char.right_hand.swim = self.meta_char.right_hand.move
         self.lineRORHSwim.setText(str(self.meta_char.right_hand.swim))
-        print str(self.meta_char.right_hand.swim)
+        #print str(self.meta_char.right_hand.swim)
         #leap
         self.meta_char.right_hand.leap = self.meta_char.right_hand.move
         self.lineRORHLeap.setText(str(self.meta_char.right_hand.leap))
-        print str(self.meta_char.right_hand.leap)
+        #print str(self.meta_char.right_hand.leap)
         #hits
         self.meta_char.right_hand.hits = self.meta_char.right_hand.body * 2
         self.lineRORHHits.setText(str(self.meta_char.right_hand.hits))
-        print str(self.meta_char.right_hand.hits)
+        #print str(self.meta_char.right_hand.hits)
         #stun
         self.meta_char.right_hand.stun = self.meta_char.right_hand.body * 5
         self.lineRORHStun.setText(str(self.meta_char.right_hand.stun))
-        print str(self.meta_char.right_hand.stun)
-        pass
+        #print str(self.meta_char.right_hand.stun)
 
     # left hand page related functions
     def onLHGoalsTextChanged(self):
         text = self.plainTextEditLHGoals.toPlainText()
-        print 'onLHGoalsTextChanged', text
+        #print 'onLHGoalsTextChanged', text
         self.meta_char.left_hand.goals = str(text)
-        print self.meta_char.left_hand.goals
-        pass
+        #print self.meta_char.left_hand.goals
     def onLHLPTextChanged(self):
         text = self.plainTextEditLHLP.toPlainText()
-        print 'onLHLPTextChanged', text
+        #print 'onLHLPTextChanged', text
         self.meta_char.left_hand.lifepath = str(text)
-        print self.meta_char.left_hand.lifepath
-        pass
+        #print self.meta_char.left_hand.lifepath
     def onLHKSOneTextChanged(self, text):
-        print 'onLHKSOneTextChanged', text
+        #print 'onLHKSOneTextChanged', text
         self.meta_char.left_hand.key_skill_1 = str(text)
-        print self.meta_char.left_hand.key_skill_1
-        pass
+        #print self.meta_char.left_hand.key_skill_1
 
     def onLHKSOneLVLTextChanged(self, text):
-        print 'onLHKSOneLVLTextChanged', text
+        #print 'onLHKSOneLVLTextChanged', text
         self.meta_char.left_hand.key_skill_1_lvl = int(text)
-        print self.meta_char.left_hand.key_skill_1_lvl
-        pass
+        #print self.meta_char.left_hand.key_skill_1_lvl
     def onLHKSTwoTextChanged(self, text):
-        print 'onLHKSTwoTextChanged', text
+        #print 'onLHKSTwoTextChanged', text
         self.meta_char.left_hand.key_skill_2 = str(text)
-        print self.meta_char.left_hand.key_skill_2
-        pass
+        #print self.meta_char.left_hand.key_skill_2
 
     def onLHKSTwoLVLTextChanged(self, text):
-        print 'onLHKSTwoLVLTextChanged', text
+        #print 'onLHKSTwoLVLTextChanged', text
         self.meta_char.left_hand.key_skill_2_lvl = int(text)
-        print self.meta_char.left_hand.key_skill_2_lvl
-        pass
+        #print self.meta_char.left_hand.key_skill_2_lvl
     def onLHKPOneTextChanged(self, text):
-        print 'onLHKPOneTextChanged', text
+        #print 'onLHKPOneTextChanged', text
         self.meta_char.left_hand.key_perk_1 = str(text)
-        print self.meta_char.left_hand.key_perk_1
-        pass
+        #print self.meta_char.left_hand.key_perk_1
 
     def onLHKPOneLVLTextChanged(self, text):
-        print 'onLHKPOneLVLTextChanged', text
+        #print 'onLHKPOneLVLTextChanged', text
         self.meta_char.left_hand.key_perk_1_lvl = int(text)
-        print self.meta_char.left_hand.key_perk_1_lvl
-        pass
+        #print self.meta_char.left_hand.key_perk_1_lvl
     def onLHKPTwoTextChanged(self, text):
-        print 'onLHKPTwoTextChanged', text
+        #print 'onLHKPTwoTextChanged', text
         self.meta_char.left_hand.key_perk_2 = str(text)
-        print self.meta_char.left_hand.key_perk_2
-        pass
+        #print self.meta_char.left_hand.key_perk_2
 
     def onLHKPTwoLVLTextChanged(self, text):
-        print 'onLHKPTwoLVLTextChanged', text
+        #print 'onLHKPTwoLVLTextChanged', text
         self.meta_char.left_hand.key_perk_2_lvl = int(text)
-        print self.meta_char.left_hand.key_perk_2_lvl
-        pass
+        #print self.meta_char.left_hand.key_perk_2_lvl
 
     def onLHIntTextChanged(self, text):
-        print 'onLHIntTextChanged', text
+        #print 'onLHIntTextChanged', text
         self.meta_char.left_hand.intelligence = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHRefTextChanged(self, text):
-        print 'onLHRefTextChanged', text
+        #print 'onLHRefTextChanged', text
         self.meta_char.left_hand.reflex = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHTechTextChanged(self, text):
-        print 'onLHTechTextChanged', text
+        #print 'onLHTechTextChanged', text
         self.meta_char.left_hand.technology = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHDexTextChanged(self, text):
-        print 'onLHDexTextChanged', text
+        #print 'onLHDexTextChanged', text
         self.meta_char.left_hand.dexterity = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHCoolTextChanged(self, text):
-        print 'onLHCoolTextChanged', text
+        #print 'onLHCoolTextChanged', text
         self.meta_char.left_hand.cool = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHWillTextChanged(self, text):
-        print 'onLHWillTextChanged', text
+        #print 'onLHWillTextChanged', text
         self.meta_char.left_hand.will= int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHStrTextChanged(self, text):
-        print 'onLHStrTextChanged', text
+        #print 'onLHStrTextChanged', text
         self.meta_char.left_hand.strength = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHConTextChanged(self, text):
-        print 'onLHConTextChanged', text
+        #print 'onLHConTextChanged', text
         self.meta_char.left_hand.constitution = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHMoveTextChanged(self, text):
-        print 'onLHMoveTextChanged', text
+        #print 'onLHMoveTextChanged', text
         self.meta_char.left_hand.move = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHBodyTextChanged(self, text):
-        print 'onLHBodyTextChanged', text
+        #print 'onLHBodyTextChanged', text
         self.meta_char.left_hand.body = int(text)
         self.update_all_left_hand_derived_fields()
-        pass
 
     def onLHNameTextChanged(self, text):
-        print 'onLNNameTextChanged', text
+        #print 'onLNNameTextChanged', text
         self.meta_char.left_hand.name= str(text)
-        pass
 
     def update_all_left_hand_derived_fields(self):
         # key skills
@@ -873,45 +792,43 @@ class MainApp(QtGui.QMainWindow, meta_char_window.Ui_MainWindow):
         #luck
         self.meta_char.left_hand.luck = self.meta_char.left_hand.intelligence + self.meta_char.left_hand.reflex / 2
         self.lineROLHLuck.setText(str(self.meta_char.left_hand.luck))
-        print str(self.meta_char.left_hand.luck)
+        #print str(self.meta_char.left_hand.luck)
         #humanity
         self.meta_char.left_hand.humanity = self.meta_char.left_hand.will * 10
         self.lineROLHHum.setText(str(self.meta_char.left_hand.humanity))
-        print str(self.meta_char.left_hand.humanity)
+        #print str(self.meta_char.left_hand.humanity)
         #recovery
         self.meta_char.left_hand.recovery = self.meta_char.left_hand.strength + self.meta_char.left_hand.constitution / 2
         self.lineROLHRec.setText(str(self.meta_char.left_hand.recovery))
-        print str(self.meta_char.left_hand.recovery)
+        #print str(self.meta_char.left_hand.recovery)
         #endurance
         self.meta_char.left_hand.endurance = self.meta_char.left_hand.constitution * 2
         self.lineROLHEnd.setText(str(self.meta_char.left_hand.endurance))
-        print str(self.meta_char.left_hand.endurance)
+        #print str(self.meta_char.left_hand.endurance)
         #run
         self.meta_char.left_hand.run = self.meta_char.left_hand.move * 2
         self.lineROLHRun.setText(str(self.meta_char.left_hand.run))
-        print str(self.meta_char.left_hand.run)
+        #print str(self.meta_char.left_hand.run)
         #sprint
         self.meta_char.left_hand.sprint = self.meta_char.left_hand.move * 3
         self.lineROLHSpr.setText(str(self.meta_char.left_hand.sprint))
-        print str(self.meta_char.left_hand.sprint)
+        #print str(self.meta_char.left_hand.sprint)
         #swim
         self.meta_char.left_hand.swim = self.meta_char.left_hand.move
         self.lineROLHSwim.setText(str(self.meta_char.left_hand.swim))
-        print str(self.meta_char.left_hand.swim)
+        #print str(self.meta_char.left_hand.swim)
         #leap
         self.meta_char.left_hand.leap = self.meta_char.left_hand.move
         self.lineROLHLeap.setText(str(self.meta_char.left_hand.leap))
-        print str(self.meta_char.left_hand.leap)
+        #print str(self.meta_char.left_hand.leap)
         #hits
         self.meta_char.left_hand.hits = self.meta_char.left_hand.body * 2
         self.lineROLHHits.setText(str(self.meta_char.left_hand.hits))
-        print str(self.meta_char.left_hand.hits)
+        #print str(self.meta_char.left_hand.hits)
         #stun
         self.meta_char.left_hand.stun = self.meta_char.left_hand.body * 5
         self.lineROLHStun.setText(str(self.meta_char.left_hand.stun))
-        print str(self.meta_char.left_hand.stun)
-        pass
-
+        #print str(self.meta_char.left_hand.stun)
 
 def convert_html_to_pdf(source, output):
     output_file = open(output, "w+b")
