@@ -3,16 +3,43 @@
 <head>
 <meta charset="utf-8" />
 <title>Cyberpunk Char Sheet</title>
+<style>
+    body {
+        font-family: monospace;
+     }
+     table, th, td {
+        border-collapse: collapse;
+        -pdf-keep-with-next: true;
+        padding-top: 2px
+     }
+     #top, #char, #perks, #skills, #cybertech, #weapons{
+        margin-bottom:10px;
+        border: 1px solid black;
+        text-align: center;
+        -pdf-keep-with-next: true;
+     }
+     @page {
+       size: letter portrait;
+     }
+
+</style>
+
 </head>
 <body>
-<table border="1"><tr><th>${name}</th><th>REP: ${reputation}</th><th>IP: ${ip}</th></tr>
+
+  <table>
+    <tr><td colspan=3>
+<div id="top">
+<table border="1"><tr><th>Name: ${name}</th><th>REP: ${reputation}</th><th>IP: ${ip}</th></tr>
+</div>
+    </td></tr>
+    <tr><td rowspan=4><img src="${image_path}" width="220" height="1000"></td><td colspan=2>
 <table border="1">
 <tr>
 	<th colspan="4">Lifepath: ${lifepath}</th>
 </tr>
 <tr>
-	<td>Motivations</td><td>Traits: ${traits}</td><td>Feel About People: ${feel_about_people}</td><td></td>
-	
+	<td>Motivations</td><td>Traits: ${traits}</td><td colspan=2>Feel About People: ${feel_about_people}</td>
 </tr>
 <tr>
 	<td></td><td>You Value Most: ${you_value_most}</td><td>Valued Person: ${valued_person}</td><td>Valued Possesion: ${valued_possesion}</td>
@@ -24,10 +51,14 @@
 	<td></td><td>Origins: ${origins}</td><td>Languages: ${languages}</td><td></td>
 </tr>
 <tr>
-	<td>Background: </td><td>${background}</td><td></td><td></td>
+	<td>Background: </td><td colspan=3>${background}</td>
 </tr>
 </table>
-<table border="1">
+
+      </td></tr>
+      <tr><td colspan=2>
+          <div id="char">
+<table border="1" width="100%" height="100%">
 <tr>
 	<th colspan="9">Character: </th><th>Sex: ${sex}</th><th>Age: ${age}</th>
 </tr>
@@ -49,63 +80,10 @@
 	<td>${spr}</td><td>${swim}</td><td>${leap}</td><td>${hits}</td><td>${stun}</td>
 </tr>
 </table>
-
-<table border="1">
-<tr>
-	<th>Perks & Talents</th><th>LVL</th>
-</tr>
-<tr>
-	<td>${perk_1}</td><td>${perk_1_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_2}</td><td>${perk_2_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_3}</td><td>${perk_3_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_4}</td><td>${perk_4_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_5}</td><td>${perk_5_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_6}</td><td>${perk_6_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_7}</td><td>${perk_7_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_8}</td><td>${perk_8_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_9}</td><td>${perk_9_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_10}</td><td>${perk_10_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_11}</td><td>${perk_11_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_12}</td><td>${perk_12_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_13}</td><td>${perk_13_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_14}</td><td>${perk_14_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_15}</td><td>${perk_15_lvl}</td>
-</tr>
-<tr>
-	<td>${perk_16}</td><td>${perk_16_lvl}</td>
-
-</tr>
-</table>
-
-
+        </div>
+        </td></tr>
+        <tr><td>
+            <div id="skills">
 <table border="1">
 <tr>
 	<th>Skills</th><th>LVL</th>
@@ -160,27 +138,90 @@
 
 </tr>
 </table>
+            </div>
+          </td><td>
+          <div id="perks">
+<table border="1" width="100%">
+<tr>
+	<th>Perks & Talents</th><th>LVL</th>
+</tr>
+<tr>
+	<td>${perk_1}</td><td>${perk_1_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_2}</td><td>${perk_2_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_3}</td><td>${perk_3_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_4}</td><td>${perk_4_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_5}</td><td>${perk_5_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_6}</td><td>${perk_6_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_7}</td><td>${perk_7_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_8}</td><td>${perk_8_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_9}</td><td>${perk_9_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_10}</td><td>${perk_10_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_11}</td><td>${perk_11_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_12}</td><td>${perk_12_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_13}</td><td>${perk_13_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_14}</td><td>${perk_14_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_15}</td><td>${perk_15_lvl}</td>
+</tr>
+<tr>
+	<td>${perk_16}</td><td>${perk_16_lvl}</td>
 
-<table border="1">
+</tr>
+</table>
+          </div>
+
+          </td></tr>
+          <tr><td>
+            <div id="cybertech">
+<table border="1" width="100%" height="100%">
 <tr>
 	<th>Outfit / Cybertech</th>
-	
 </tr>
 <tr>
 	<td>${outfit}</td>
 </tr>
 </table>
-
-<table border="1">
+            </div>
+            </td><td>
+              <div id="weapons">
+<table border="1" width="100%" height="100%">
 <tr>
 	<th>Weapons</th>
-	
 </tr>
 <tr>
 	<td>${weapons}</td>
 </tr>
 </table>
-
+              </div>
+            </td></tr>
+</table>
 
 </body>
 </html>

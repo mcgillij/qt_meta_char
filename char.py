@@ -42,16 +42,11 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         export_pdf_action.setShortcut('Ctrl+p')
         export_pdf_action.setStatusTip('Export to PDF')
         export_pdf_action.triggered.connect(self.export_to_pdf)
-        test_action = QtGui.QAction(QtGui.QIcon('test.png'), '&Test', self)
-        test_action.setShortcut('Ctrl+T')
-        test_action.setStatusTip('TestAction')
-        test_action.triggered.connect(self.showTestDialog)
         menubar = self.menuBar()
 
         file_menu = menubar.addMenu('&File')
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
-        file_menu.addAction(test_action)
         file_menu.addAction(export_html_action)
         file_menu.addAction(export_pdf_action)
         file_menu.addAction(exit_action)
@@ -62,7 +57,6 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
             html = open('char_sheet.html', 'r')
             html_str = html.read()
             html.close()
-            #html = '<h1>${name}Hi there</h1><p>${pants}hi2<br/></p>hi3'
             from string import Template
             s = Template(html_str)
             d = self.create_dict()
@@ -196,8 +190,6 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
 )
         return my_dict
     #diag windows
-    def showTestDialog(self):
-        pprint(dir(self.char))
     def showOpenDialog(self):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Open File', '/home')
         print "opening", filename, "\n"
