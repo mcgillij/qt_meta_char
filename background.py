@@ -2,7 +2,7 @@ import random
 
 class CharInfo():
     def __init__(self, age, traits, feel_people, value_most, valued_person, valued_possession, clothes, hair, affectations, origins, background, parent=None):
-        self.age = age
+        self.age = int(age)
         self.traits = traits
         self.feel_people = feel_people
         self.value_most = value_most
@@ -14,17 +14,31 @@ class CharInfo():
         self.origins = origins
         self.background = background
 
+    def return_me(self):
+        output =  "Age: " + str(self.age) + "\n"
+        output +=  "Traits: " + self.traits + "\n"
+        output +=  "Feels about people: " + self.feel_people + "\n"
+        output +=  "Value Most: " + self.value_most + "\n"
+        output +=  "Valued Person: " + self.valued_person + "\n"
+        output +=  "Valued Possession: " + self.valued_possession + "\n"
+        output +=  "Clothes: " + self.clothes + "\n"
+        output +=  "Hair: " + self.hair + "\n"
+        output +=  "Affectations: " + self.affectations + "\n"
+        output +=  "Origins: " + self.origins + "\n"
+        output +=  str(self.background)
+        return output
+
     def print_me(self):
-        print "Age: " + str(self.age)
-        print "Traits: " + self.traits
-        print "Feels about people: " + self.feel_people
-        print "Value Most: " + self.value_most
-        print "Valued Person: " + self.valued_person
-        print "Valued Possession: " + self.valued_possession
-        print "Clothes: " + self.clothes
-        print "Hair: " + self.hair
-        print "Affectations: " + self.affectations
-        print "Origins: " + self.origins
+        print "Age: " + str(self.age) + "\n"
+        print "Traits: " + self.traits + "\n"
+        print "Feels about people: " + self.feel_people + "\n"
+        print "Value Most: " + self.value_most + "\n"
+        print "Valued Person: " + self.valued_person + "\n"
+        print "Valued Possession: " + self.valued_possession + "\n"
+        print "Clothes: " + self.clothes + "\n"
+        print "Hair: " + self.hair + "\n"
+        print "Affectations: " + self.affectations + "\n"
+        print "Origins: " + self.origins + "\n"
         print self.background
 
 class Roller():
@@ -209,14 +223,14 @@ class Roller():
 
         # even lucky
         self.life_events_lucky = [
-                "Make a Powerful Connection in the Local Government. Roll 1D10. 1-4 Local Security Forces, 5-7 Local Altcult Leader's Office, 8-10 City Manager's Office",
+                "Made a Powerful Connection in the Local Government. Roll 1D10. 1-4 Local Security Forces, 5-7 Local Altcult Leader's Office, 8-10 City Manager's Office",
                 "Financial Windfall: Roll 1D10 x 100 for amount of NCD",
                 "Big Score on the job or deal! Roll 1D10 x 100 for amount of NCD",
                 "Find a Sensei (teacher) Begin at +2 or add +1 to a Martial Arts skill of your choice",
                 "Find a teacher: Add +1 to any INT based skill, or begin a new INT based skill at +2",
                 "Powerful Altcult member owes you a favor",
                 "Local Nomad Pack befriends you. You can call upon them for one favor a month, equivalent to a Family Perk of +2",
-                "Make a friend in a local Altcult. You may use him for inside information at a level of +2 Streetwise on any situation relating to that Altcult",
+                "Made a friend in a local Altcult. You may use him for inside information at a level of +2 Streetwise on any situation relating to that Altcult",
                 "Local Boostergang likes you (Who knows why. These are Boosters right?) You can call upon them for 1 favor a month, equivalent to Family Perk of +2. But don't push your luck",
                 "Find a Combat Teacher. Add +1 to any weapon skill with the exception of Martial Arts or Brawling, or begin a new combat skill at +2"
                 ]
@@ -531,7 +545,8 @@ class Roller():
         origins = random.choice(self.personal_origins)
         background = self.roll_background(num_years)
         c = CharInfo(age, traits, how_do_you_feel_about_people, value_most, what_person_do_you_value_most, possession, clothes, hair, affectations, origins, background)
-        c.print_me()
+        #c.print_me()
+        return c
 
     def roll_background(self, num_years):
         backgrounds = []
