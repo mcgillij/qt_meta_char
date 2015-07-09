@@ -534,7 +534,6 @@ class Roller():
         c.print_me()
 
     def roll_background(self, num_years):
-        print "Here is the number of iterations this should do: " + str(num_years) + "\n"
         backgrounds = []
         backgrounds.extend(self.background_edgerunner)
         backgrounds.extend(self.background_desnai)
@@ -594,7 +593,7 @@ class Roller():
                 else:
                     event = random.choice(self.life_events_disaster)
                     what_you_gonna_do = random.choice(self.life_events_waygdai)
-                    event = event + " and you want to " + what_you_gonna_do + "\n"
+                    event = event + " and you want to " + what_you_gonna_do 
 
             elif event == "Friends & Enemies":
                 friend_or_enemy = random.choice(self.friends_and_enemies)
@@ -609,7 +608,7 @@ class Roller():
                     friend_hair = random.choice(self.personal_style_hair)
                     friend_affectations = random.choice(self.personal_affectations)
                     friend_motivation = random.choice(self.personality_traits)
-                    event = "You made a " + friend_gender + " friend and he/she's an " + friend_status + "\n" + "They usually wear " + friend_clothes + " clothes, and they rock a " + friend_hair + " haircut and also like " + friend_affectations + "\n" + "Your buddy also has the following motivation: " + friend_motivation + "\n"
+                    event = "You made a " + friend_gender + " friend and he/she's an " + friend_status + "\n" + "They usually wear " + friend_clothes + " clothes, and they rock a " + friend_hair + " haircut and also like " + friend_affectations + "\n" + "Your buddy also has the following motivation: " + friend_motivation
                 else:
                     # enemy
                     num = random.randint(1,10)
@@ -623,22 +622,22 @@ class Roller():
                     whos_frakked = random.choice(self.enemies_frakked)
                     what_you_gonna_do = random.choice(self.enemies_wgdabi)
                     enemy_forces = random.choice(self.enemies_forces)
-                    event = "You made a " + enemy_gender + " enemy and he/she's an " + enemy_relation + " and also " + enemy_cause + " and " + whos_frakked + " and you intend to " + what_you_gonna_do + " but they may have some extra influence from " + enemy_forces + "\n"
+                    event = "You made a " + enemy_gender + " enemy and he/she's an " + enemy_relation + " and also " + enemy_cause + " and " + whos_frakked + " and you intend to " + what_you_gonna_do + " but they may have some extra influence from " + enemy_forces
 
             elif event == "Romantic Involvement":
                 relationship = random.choice(self.romantic_how_it_worked_out)
                 if relationship == "Tragic love affair":
                     tragic = random.choice(self.tragic_love_affair)
                     mutual_feelings = random.choice(self.mutual_feelings)
-                    event = relationship + ": " + tragic + " and your feelings on the matter are " + mutual_feelings + "\n"
+                    event = relationship + ": " + tragic + " and your feelings on the matter are " + mutual_feelings
                 elif relationship == "Love Affair with problems":
                     problems = random.choice(self.love_affair_with_problems)
-                    event = relationship + ": " + problems + "\n"
+                    event = relationship + ": " + problems
                 elif relationship == "Life got COMPLICATED":
                     complication = random.choice(self.complicated)
-                    event = relationship + ": " + complication + "\n"
+                    event = relationship + ": " + complication
                 else:
-                    event = event + ": " + relationship + "\n"
+                    event = event + ": " + relationship
 
 
             background += str(i+17)+ ": " + event + "\n"
