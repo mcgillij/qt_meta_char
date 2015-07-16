@@ -2,6 +2,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 import sys
 import char_window
+import howto
 from classes import Char
 from xhtml2pdf import pisa
 
@@ -12,6 +13,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.char = Char()
         self.init_ui()
         self.init_menu()
+        self.diag = ""
     #main
     def main(self):
         self.show()
@@ -32,23 +34,37 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         load_action.setStatusTip('Load From Disk')
         load_action.triggered.connect(self.showOpenDialog)
 
-        export_html_action = QtGui.QAction(QtGui.QIcon('export.png'), 'E&xport HTML', self)
+        export_html_action = QtGui.QAction(QtGui.QIcon('export.png'), 'Export H&TML', self)
         export_html_action.setShortcut('Ctrl+t')
         export_html_action.setStatusTip('Export to HTML')
         export_html_action.triggered.connect(self.export_to_html)
 
-        export_pdf_action = QtGui.QAction(QtGui.QIcon('export.png'), 'E&xport PDF', self)
+        export_pdf_action = QtGui.QAction(QtGui.QIcon('export.png'), 'E&xport P&DF', self)
         export_pdf_action.setShortcut('Ctrl+p')
         export_pdf_action.setStatusTip('Export to PDF')
         export_pdf_action.triggered.connect(self.export_to_pdf)
+
+        howto_menu_action = QtGui.QAction(QtGui.QIcon('howto.png'), 'How To', self)
+        howto_menu_action.setStatusTip('How to create a character')
+        howto_menu_action.triggered.connect(self.show_howto_diag)
+
         menubar = self.menuBar()
 
         file_menu = menubar.addMenu('&File')
+        howto_menu = menubar.addMenu('&Howto')
+        howto_menu.addAction(howto_menu_action)
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
         file_menu.addAction(export_html_action)
         file_menu.addAction(export_pdf_action)
         file_menu.addAction(exit_action)
+
+    def show_howto_diag(self):
+        self.diag = QtGui.QDialog()
+        self.diag.ui = howto.Ui_howto_Dialog()
+        self.diag.ui.setupUi(self.diag)
+        self.diag.setAttribute(Qt.WA_DeleteOnClose)
+        self.diag.show()
 
     def export_to_html(self):
         filename = QtGui.QFileDialog.getSaveFileName(self, 'Export to HTML', "*.html")

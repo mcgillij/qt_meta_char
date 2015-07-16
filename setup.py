@@ -9,7 +9,8 @@ base = 'Win32GUI' if sys.platform=='win32' else None
 
 executables = [
     Executable('char.py', base=base),
-    Executable('meta_char.py', base=base)
+    Executable('meta_char.py', base=base),
+    Executable('bg_generate.py', base=base)
 ]
 
 setup(name='Cyberpunk Char Creator',
