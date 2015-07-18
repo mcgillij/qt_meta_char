@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'background_generator.ui'
 #
-# Created: Sat Jul 18 01:20:26 2015
+# Created: Sat Jul 18 01:33:00 2015
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!

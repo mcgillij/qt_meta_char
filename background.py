@@ -659,7 +659,8 @@ class Roller():
         return background
 
     def main(self):
-        self.roll_personality(25)
+        c = self.roll_personality(25)
+        c.print_me()
 
 def is_even(num):
     return num % 2 == 0

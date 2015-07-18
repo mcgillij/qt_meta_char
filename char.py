@@ -3,6 +3,7 @@ from PyQt4.QtCore import *
 import sys
 import char_window
 import howto
+import bg_helper_gui
 from classes import Char
 from xhtml2pdf import pisa
 
@@ -14,6 +15,7 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         self.init_ui()
         self.init_menu()
         self.diag = ""
+        self.bg_helper = ""
     #main
     def main(self):
         self.show()
@@ -48,16 +50,27 @@ class MainApp(QtGui.QMainWindow, char_window.Ui_MainWindow):
         howto_menu_action.setStatusTip('How to create a character')
         howto_menu_action.triggered.connect(self.show_howto_diag)
 
+        bg_help_menu_action = QtGui.QAction(QtGui.QIcon('bghelp.png'), "Background Helper", self)
+        bg_help_menu_action.setStatusTip('Background Helper')
+        bg_help_menu_action.triggered.connect(self.show_background_helper)
+
         menubar = self.menuBar()
 
         file_menu = menubar.addMenu('&File')
-        howto_menu = menubar.addMenu('&Howto')
-        howto_menu.addAction(howto_menu_action)
         file_menu.addAction(load_action)
         file_menu.addAction(save_action)
         file_menu.addAction(export_html_action)
         file_menu.addAction(export_pdf_action)
         file_menu.addAction(exit_action)
+        howto_menu = menubar.addMenu('&Howto')
+        howto_menu.addAction(howto_menu_action)
+        bg_help_menu = menubar.addMenu('&Background Helper')
+        bg_help_menu.addAction(bg_help_menu_action)
+
+    def show_background_helper(self):
+        self.bg_helper = bg_helper_gui.BGHelper()
+        self.bg_helper.setAttribute(Qt.WA_DeleteOnClose)
+        self.bg_helper.show()
 
     def show_howto_diag(self):
         self.diag = QtGui.QDialog()
